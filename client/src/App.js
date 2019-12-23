@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Main from "./pages/Main";
-import Signup from "./pages/signup";
+import Main from "./pages/Mainpage";
+import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
