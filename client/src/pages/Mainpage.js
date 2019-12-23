@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+// import Nav from "../components/Nav/Navbar";
 
 class Books extends Component {
   state = {
@@ -59,9 +60,9 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>NOBIS</h1>
             </Jumbotron>
-            <form>
+            {/* <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -86,9 +87,9 @@ class Books extends Component {
               >
                 Submit Book
               </FormBtn>
-            </form>
+            </form> */}
           </Col>
-          <Col size="md-6 sm-12">
+          {/* <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Books On My List</h1>
             </Jumbotron>
@@ -108,7 +109,7 @@ class Books extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     );
