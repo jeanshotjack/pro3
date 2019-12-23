@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/Mainpage";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Navbar";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 

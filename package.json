@@ -26,6 +26,9 @@
     "momentjs": "^2.0.0",
     "mongoose": "^5.8.2",
     "morgan": "^1.9.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "reactstrap": "^8.2.0",
     "session": "^0.1.0",
     "storage": "^0.2.0"
   }
