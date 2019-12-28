@@ -16,11 +16,11 @@ class Main extends Component {
   };
 
   componentDidMount() {
-    this.loadUserPosts();
+    this.getPosts();
   }
 
-  loadUserPosts = () => {
-    API.getUserPosts()
+  getPosts = () => {
+    API.getPosts()
       .then(res =>
         this.setState({ notes: res.data, title: "", author: "", flag: false, })
       )
