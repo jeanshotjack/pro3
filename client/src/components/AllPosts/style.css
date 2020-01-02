@@ -1,0 +1,12 @@
+ul.search-results img {
+  margin: auto;
+}
+
+.title-font{
+  font-family: 'Courgette', cursive;
+  color: black;
+}
+
+.btn-container .btn{
+  margin: 4px;
+}
