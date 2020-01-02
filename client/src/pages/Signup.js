@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SignUpPage from "./SignUpPage";
-
 class SignUp extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -15,20 +14,69 @@ class SignUp extends Component {
       }
   }
 
-handleInput = (event) => {
+handleUser = (event) => {
   event.preventDefault();
   console.log(event.target.value)
   this.setState({username: event.target.value})
-  this.setState({password: event.target.value})
-  this.setState({confirm: event.target.value})
-  this.setState({email: event.target.value})
-  this.setState({DOB: event.target.value})
-  this.setState({gender: event.target.value})
       }
+handlePassword = (event) => {
+    event.preventDefault();
+    console.log(event.target.value)
+    this.setState({password: event.target.value})
+            }
+handleConfirm = (event) => {
+    event.preventDefault();
+    console.log(event.target.value)
+    this.setState({confirm: event.target.value})
+                        }
+handleEmail = (event) => {
+    event.preventDefault();
+    console.log(event.target.value)
+    this.setState({email: event.target.value})
+                        }
+handleDOB = (event) => {
+    event.preventDefault();
+    console.log(event.target.value)
+    this.setState({DOB: event.target.value})
+                        }
+handleGender = (event) => {
+    event.preventDefault();
+    console.log(event.target.value)
+    this.setState({gender: event.target.value})
+                        }
+// handleVer = (event) => {
+//     event.preventDefault();
+//     console.log("Click")
+//     if (!this.state.username ||
+//         !this.state.password ||
+//         !this.state.confirm ||
+//         !this.state.email){
+//             console.log("Please Fill in all things")
+//         }
+//         else{
+//     if (this.state.confirm != this.state.password){
+//         console.log("Passwords do not match")
+//     }
+//     else{
+//     if (db.Accounts.get({username:this.state.username}) != 0){
+//         console.log("user already exists")
+//     }
+//     else {
+//         console.log("encrypting...");
+//         var salt = crypto.randomBytes(64).toString("hex");
+//         var hash = crypto
+//           .pbkdf2Sync(this.state.password, salt, 10000, 64, "sha512")
+//           .toString("hex");
+//         db.Accounts.save( {username: this.state.username, password: hash, salt: salt, email:this.state.email}).then(console.log("account created"))
+//     }
+// }
+// }
+// }
+
       render() {
         return (
-            <div className="books-div">
-                <SignUpPage handleBooks = {this.handleInput}/>
+            <div>
+                <SignUpPage handleUser = {this.handleUser} handlePassword = {this.handlePassword} handleConfirm = {this.handleConfirm} handleEmail = {this.handleEmail} handleDOB = {this.handleDOB} handleGender = {this.handleGender} handleVer = {this.handleVer}/>
             </div>
         )
     }
