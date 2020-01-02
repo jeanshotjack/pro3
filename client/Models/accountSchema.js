@@ -29,5 +29,7 @@ const UserSchema = new Schema({
     default: Date.now
   }
 });
+
+UserSchema.hasMany("Post");
 var User = mongoose.model("User", UserSchema);
 module.exports = User;

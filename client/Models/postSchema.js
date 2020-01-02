@@ -25,5 +25,7 @@ const PostSchema = new Schema({
       }
 });
 
+PostSchema.belongsTo("User");
+
 var Post = mongoose.model("Post", PostSchema);
 module.exports = Post;
