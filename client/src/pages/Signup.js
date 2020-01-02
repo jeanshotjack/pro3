@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SignUpPage from "./SignUpPage";
-
 class SignUp extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -45,10 +44,34 @@ handleGender = (event) => {
     console.log(event.target.value)
     this.setState({gender: event.target.value})
                         }
-handleVer = (event) => {
-    event.preventDefault();
-    console.log("Click")
-}
+// handleVer = (event) => {
+//     event.preventDefault();
+//     console.log("Click")
+//     if (!this.state.username ||
+//         !this.state.password ||
+//         !this.state.confirm ||
+//         !this.state.email){
+//             console.log("Please Fill in all things")
+//         }
+//         else{
+//     if (this.state.confirm != this.state.password){
+//         console.log("Passwords do not match")
+//     }
+//     else{
+//     if (db.Accounts.get({username:this.state.username}) != 0){
+//         console.log("user already exists")
+//     }
+//     else {
+//         console.log("encrypting...");
+//         var salt = crypto.randomBytes(64).toString("hex");
+//         var hash = crypto
+//           .pbkdf2Sync(this.state.password, salt, 10000, 64, "sha512")
+//           .toString("hex");
+//         db.Accounts.save( {username: this.state.username, password: hash, salt: salt, email:this.state.email}).then(console.log("account created"))
+//     }
+// }
+// }
+// }
 
       render() {
         return (

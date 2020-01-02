@@ -1,8 +1,9 @@
 import React from "react";
+// import API from "../utils/API"
 
   const Signup = (props) => {
     return (
-  <form onSubmit = {props.handleVer}>
+  <form onSubmit>
     <div className="form-row">
     <div className="form-group">
       <label for="exampleInputEmail1">Email address</label>
