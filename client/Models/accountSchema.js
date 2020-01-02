@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
+const { mongooseAssociation } = require('mongoose-association');
+mongooseAssociation(mongoose);
 var Schema = mongoose.Schema;
-var UserSchema = new Schema({
+const UserSchema = new Schema({
   username: {
     type: String,
     trim: true,
