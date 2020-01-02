@@ -26,11 +26,18 @@ function NavBar(props) {
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown> */}
           </Nav>
+<<<<<<< HEAD
   
             <Button href="#login" variant="outline-success">Login</Button>
             {" "}
             <Button href="#signup" variant="outline-success">Sign Up</Button>
             
+=======
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button href="/login" variant="outline-success">Login</Button>
+            <Button href="/signup" variant="outline-success">Sign Up</Button>
+>>>>>>> 317fd6023ddfa0b6310f601e8b24277d4e2a7cd3
 
           
         </Navbar.Collapse>
