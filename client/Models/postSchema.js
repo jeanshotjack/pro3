@@ -8,21 +8,21 @@ const PostSchema = new Schema({
         trim: true,
         required: "title is required"
       },
-      body: {
-        type: String,
-        trim: true,
-        required: "body is required",
-        validate: [
-          function(input) {
-            return input.length <= 200;
-          },
-          "Body can't be longer than 200 characters"
-        ]
-      },
-      postCreated: {
-        type: Date,
-        default: Date.now
-      }
+    body: {
+      type: String,
+      trim: true,
+      required: "body is required",
+      validate: [
+        function(input) {
+          return input.length <= 200;
+        },
+        "Body can't be longer than 200 characters"
+      ]
+    },
+    postCreated: {
+      type: Date,
+      default: Date.now
+    }
 });
 
 PostSchema.belongsTo("User");

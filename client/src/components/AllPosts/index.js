@@ -16,31 +16,28 @@ function AllPosts(props) {
         </Col>
         <Col size="md-4">
           <div className="btn-container">
-            <a className="btn btn-secondary" href={props.link} target="_blank">
-              View
-            </a>
-            <button className="btn btn-secondary" data-index={props.booksIndex} onClick={props.handleFlagPost}> Save </button>
+            {/* <a className="btn btn-secondary" href={props.link} target="Dashboard">
+              About
+            </a> */}
+            <button className="btn btn-secondary" data-index={props.index} onClick={props.handleFlagPost}> Flag </button>
           </div>
         </Col>
       </Row>
       <Row>
         <Col size="md-6">
           <p className="font-italic small">
-            Author: {props.author}
+            User: {props.User}
           </p>
         </Col>
         <Col size="md-6">
           <p className="font-italic small">
-            Published Date: {props.publishedDate}
+            Published Date: {props.postCreated}
           </p>
         </Col>
       </Row>
       <Row>
-        <Col size="12 sm-4 md-2">
-          <img className="img-thumbnail img-fluid w-100" src={props.image} alt={props.title} />
-        </Col>
-        <Col size="12 sm-8 md-10">
-          <p>{props.description}</p>
+        <Col size="12 md-12">
+          <p>{props.body}</p>
         </Col>
       </Row>
     </ListItem>

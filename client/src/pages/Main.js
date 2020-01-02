@@ -8,7 +8,7 @@ import API from "../utils/API";
 
 class Main extends Component {
   state = {
-    userposts: [],
+    Post: [],
     flag: false,
     error: "",
   };
@@ -20,7 +20,7 @@ class Main extends Component {
   getPosts = () => {
     API.getPosts()
       .then(res =>
-        this.setState({ userposts: res.data })
+        this.setState({ Post: res.data })
       )
       .catch(err => console.log(err));
   };
@@ -44,17 +44,16 @@ class Main extends Component {
             <Jumbotron>
               <h1>NOBIS</h1>
             </Jumbotron>
-            {this.state.userposts.map((obj, index) => {
+            {this.state.Post.map((obj, index) => {
               return <AllPosts
                 title={obj.title}
-                author={obj.author}
-                image={obj.image}
-                publishedDate={obj.publishedDate}
-                link={obj.link}
-                description={obj.description}
+                User={obj.User}
+                postCreated={obj.postCreated}
+                // link={obj.link}
+                body={obj.body}
 
                 idInDatabase={obj._id}
-                savedIndex={index}
+                index={index}
                 handleFlagPost={this.handleFlagPost}
               />
 
