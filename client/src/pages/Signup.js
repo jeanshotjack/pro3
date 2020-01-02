@@ -1,26 +1,37 @@
-import React from "react";
+import React, { Component } from "react";
+import SignUpPage from "./SignUpPage";
 
-function Signup() {
-  return (
-<form>
-  <div class="form-row">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-    <div class="col">
-      <input type="text" className="form-control" placeholder="User Name" />
-    </div>
-    <div class="col">
-      <input type="password" className="form-control" placeholder="password" />
-    </div>
-    <div class="col">
-      <input type="password" className="form-control" placeholder="confirm password" />
-    </div>
-  </div>
-</form>
-  );
+class SignUp extends Component {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+      super(props)
+      this.state = {
+          username: [],
+          password: "",
+          confirm: "",
+          email: "",
+          DOP: "",
+          gender:""
+      }
+  }
+
+handleInput = (event) => {
+  event.preventDefault();
+  console.log(event.target.value)
+  this.setState({username: event.target.value})
+  this.setState({password: event.target.value})
+  this.setState({confirm: event.target.value})
+  this.setState({email: event.target.value})
+  this.setState({DOB: event.target.value})
+  this.setState({gender: event.target.value})
+      }
+      render() {
+        return (
+            <div className="books-div">
+                <SignUpPage handleBooks = {this.handleInput}/>
+            </div>
+        )
+    }
+
 }
-
-export default Signup;
+export default SignUp;
