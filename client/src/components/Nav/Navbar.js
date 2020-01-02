@@ -28,8 +28,8 @@ function NavBar(props) {
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Login</Button>
-            <Button variant="outline-success">Sign Up</Button>
+            <Button href="#login" variant="outline-success">Login</Button>
+            <Button href="#signup" variant="outline-success">Sign Up</Button>
 
           </Form>
         </Navbar.Collapse>

@@ -11,10 +11,10 @@ export default {
   },
   // Deletes the book with the given id
   deletePost: function(id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/posts/" + id);
   },
   // Saves a book to the database
   savePost: function(bookData) {
-    return axios.post("/api/books", bookData);
+    return axios.post("/api/posts", bookData);
   }
 };
