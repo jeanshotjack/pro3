@@ -33,6 +33,8 @@
     "morgan": "^1.9.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-image-and-background-image-fade": "^1.0.4",
+    "react-slideshow-image": "^1.3.3",
     "reactstrap": "^8.2.0",
     "session": "^0.1.0",
     "storage": "^0.2.0"
