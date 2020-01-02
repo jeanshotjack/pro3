@@ -19,8 +19,12 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@pusher/chatkit-server": "^2.4.0",
     "axios": "^0.19.0",
-    "express": "^4.16.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "if-env": "^1.0.4",
     "moment": "^2.24.0",
     "momentjs": "^2.0.0",
@@ -32,5 +36,14 @@
     "reactstrap": "^8.2.0",
     "session": "^0.1.0",
     "storage": "^0.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanshotjack/pro3.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jeanshotjack/pro3/issues"
+  },
+  "homepage": "https://github.com/jeanshotjack/pro3#readme"
 }
