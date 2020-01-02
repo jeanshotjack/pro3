@@ -4,6 +4,7 @@ import {
   handleInput,
   connectToChatkit,
   connectToRoom,
+  sendMessage,
 } from '../methods';
 import Dialog from '../components/Dialog';
 
@@ -31,6 +32,7 @@ class Chat extends Component {
     this.handleInput = handleInput.bind(this);
     this.connectToChatkit = connectToChatkit.bind(this);
     this.connectToRoom = connectToRoom.bind(this);
+    this.sendMessage = sendMessage.bind(this);
   }
 
   render() {
@@ -70,12 +72,14 @@ class Chat extends Component {
           </header>
           <ul className="chat-messages"></ul>
           <footer className="chat-footer">
-            <form className="message-form">
+            <form onSubmit={this.sendMessage} className="message-form">
               <input
                 type="text"
+                value={newMessage}
                 name="newMessage"
                 className="message-input"
                 placeholder="Type your message and hit ENTER to send"
+                onChange={this.handleInput}
               />
             </form>
           </footer>

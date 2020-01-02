@@ -85,4 +85,20 @@ function connectToChatkit(event) {
         .catch(console.error);
 }
 
+function sendMessage(event) {
+    event.preventDefault();
+    const { newMessage, currentUser, currentRoom } = this.state;
+
+    if (newMessage.trim() === '') return;
+
+    currentUser.sendMessage({
+      text: newMessage,
+      roomId: `${currentRoom.id}`,
+    });
+
+    this.setState({
+      newMessage: '',
+    });
+  }
+
 export { handleInput, connectToRoom, connectToChatkit }
