@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
 import App from "./App";
 
-
+// Not sure what this is but I tried to compile without it and then added it back in and it works now
 ReactDOM.render(<App />, document.getElementById("root"));
+
+
