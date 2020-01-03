@@ -5,15 +5,17 @@ import {
   connectToChatkit,
   connectToRoom,
   sendMessage,
-} from '../methods';
-import Dialog from '../components/Dialog';
+  sendDM,
+} from '../components/Chat/methods';
+import Dialog from '../components/Chat/Dialog';
 
-import RoomList from '../components/RoomList';
-import ChatSession from '../components/ChatSession';
+import RoomList from '../components/Chat/RoomList';
+import ChatSession from '../components/Chat/ChatSession';
+import RoomUsers from '../components/Chat/RoomUsers';
 
 import 'skeleton-css/css/normalize.css';
 import 'skeleton-css/css/skeleton.css';
-import '../Chat.css';
+import '../components/Chat/Chat.css';
 
 class Chat extends Component {
   constructor() {
@@ -34,6 +36,7 @@ class Chat extends Component {
     this.connectToChatkit = connectToChatkit.bind(this);
     this.connectToRoom = connectToRoom.bind(this);
     this.sendMessage = sendMessage.bind(this);
+    this.sendDM = sendDM.bind(this);
   }
 
   render() {
@@ -50,8 +53,9 @@ class Chat extends Component {
     } = this.state;
 
     return (
+      
       <div className="Chat">
-        <aside className="sidebar left-sidebar">
+        <div className="sidebar left-sidebar">
           {currentUser ? (
             <div className="user-profile">
               <span className="username">{currentUser.name}</span>
@@ -66,7 +70,25 @@ class Chat extends Component {
                   currentUser={currentUser}
                 />
               ) : null}
-        </aside>
+        </div>
+
+        <div className="sidebar right-sidebar">
+          {showLogin ? (
+            <Dialog
+              userId={userId}
+              handleInput={this.handleInput}
+              connectToChatkit={this.connectToChatkit}
+            />
+          ) : null}
+          {currentRoom ? (
+            <RoomUsers
+              currentUser={currentUser}
+              sendDM={this.sendDM}
+              roomUsers={roomUsers}
+            />
+          ) : null}
+        </div>
+
         <section className="chat-screen">
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
@@ -87,7 +109,9 @@ class Chat extends Component {
             </form>
           </footer>
         </section>
-        <aside className="sidebar right-sidebar">
+
+
+        {/* <div className="sidebar right-sidebar">
           {showLogin ? (
             <Dialog
               userId={userId}
@@ -95,7 +119,15 @@ class Chat extends Component {
               connectToChatkit={this.connectToChatkit}
             />
           ) : null}
-        </aside>
+          {currentRoom ? (
+            <RoomUsers
+              currentUser={currentUser}
+              sendDM={this.sendDM}
+              roomUsers={roomUsers}
+            />
+          ) : null}
+        </div> */}
+
       </div>
     );
   }
