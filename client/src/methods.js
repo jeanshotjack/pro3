@@ -101,4 +101,4 @@ function sendMessage(event) {
     });
   }
 
-export { handleInput, connectToRoom, connectToChatkit }
+export { handleInput, connectToRoom, connectToChatkit, sendMessage }
