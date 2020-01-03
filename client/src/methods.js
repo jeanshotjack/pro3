@@ -19,6 +19,24 @@ function connectToRoom(id = "ee64eb31-72bd-4d05-a3f0-7bdb83a89968") {
     return currentUser
       .subscribeToRoom({
         roomId: `${id}`,
+        messageLimit: 100,
+          hooks: {
+            onMessage: message => {
+              this.setState({
+                messages: [...this.state.messages, message],
+              });
+            },
+            onPresenceChanged: () => {
+              const { currentRoom } = this.state;
+              this.setState({
+                roomUsers: currentRoom.users.sort(a => {
+                  if (a.presence.state === 'online') return -1;
+
+                  return 1;
+                }),
+              });
+            },
+          },
       })
       .then(currentRoom => {
         const roomName =
@@ -85,4 +103,20 @@ function connectToChatkit(event) {
         .catch(console.error);
 }
 
-export { handleInput, connectToRoom, connectToChatkit }
+function sendMessage(event) {
+    event.preventDefault();
+    const { newMessage, currentUser, currentRoom } = this.state;
+
+    if (newMessage.trim() === '') return;
+
+    currentUser.sendMessage({
+      text: newMessage,
+      roomId: `${currentRoom.id}`,
+    });
+
+    this.setState({
+      newMessage: '',
+    });
+  }
+
+export { handleInput, connectToRoom, connectToChatkit, sendMessage }

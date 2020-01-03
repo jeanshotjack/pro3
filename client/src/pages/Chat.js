@@ -4,10 +4,12 @@ import {
   handleInput,
   connectToChatkit,
   connectToRoom,
+  sendMessage,
 } from '../methods';
 import Dialog from '../components/Dialog';
 
 import RoomList from '../components/RoomList';
+import ChatSession from './components/ChatSession';
 
 import 'skeleton-css/css/normalize.css';
 import 'skeleton-css/css/skeleton.css';
@@ -31,6 +33,7 @@ class Chat extends Component {
     this.handleInput = handleInput.bind(this);
     this.connectToChatkit = connectToChatkit.bind(this);
     this.connectToRoom = connectToRoom.bind(this);
+    this.sendMessage = sendMessage.bind(this);
   }
 
   render() {
@@ -68,14 +71,18 @@ class Chat extends Component {
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
           </header>
-          <ul className="chat-messages"></ul>
+          <ul className="chat-messages">
+            <ChatSession messages={messages} />
+          </ul>
           <footer className="chat-footer">
-            <form className="message-form">
+            <form onSubmit={this.sendMessage} className="message-form">
               <input
                 type="text"
+                value={newMessage}
                 name="newMessage"
                 className="message-input"
                 placeholder="Type your message and hit ENTER to send"
+                onChange={this.handleInput}
               />
             </form>
           </footer>
