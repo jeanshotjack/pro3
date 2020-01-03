@@ -1,13 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import Jumbotron from "../components/Jumbotron";
-import { Col, Row, Container } from "../components/Grid";
-import Slideshow from "../components/ImgSlide/Slideshow";
-// import Nav from "../components/Nav/Navbar";
-
-
-class Main extends Component {
-=======
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
@@ -44,7 +35,6 @@ class Main extends Component {
       )
       .catch(err => console.log(err));
   };
->>>>>>> 317fd6023ddfa0b6310f601e8b24277d4e2a7cd3
 
   render() {
     return (
@@ -54,9 +44,6 @@ class Main extends Component {
             <Jumbotron>
               <h1>NOBIS</h1>
             </Jumbotron>
-<<<<<<< HEAD
-            <Slideshow />
-=======
             {this.state.Post.map((obj, index) => {
               return <AllPosts
                 title={obj.title}
@@ -72,7 +59,6 @@ class Main extends Component {
 
             })}
 
->>>>>>> 317fd6023ddfa0b6310f601e8b24277d4e2a7cd3
           </Col>
         </Row>
       </Container>
