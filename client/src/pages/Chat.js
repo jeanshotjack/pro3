@@ -70,10 +70,7 @@ class Chat extends Component {
                   currentUser={currentUser}
                 />
               ) : null}
-<<<<<<< HEAD
         </aside>
-=======
-        </div>
 
         <div className="sidebar right-sidebar">
           {showLogin ? (
@@ -92,7 +89,6 @@ class Chat extends Component {
           ) : null}
         </div>
 
->>>>>>> 0e93c14b9d318c1d31b11e99f1fced9e5049862a
         <section className="chat-screen">
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
