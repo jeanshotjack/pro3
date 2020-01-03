@@ -109,13 +109,9 @@ class Chat extends Component {
             </form>
           </footer>
         </section>
-<<<<<<< HEAD
-        <aside className="sidebar right-sidebar">
-=======
 
 
         {/* <div className="sidebar right-sidebar">
->>>>>>> 0e93c14b9d318c1d31b11e99f1fced9e5049862a
           {showLogin ? (
             <Dialog
               userId={userId}
@@ -130,12 +126,8 @@ class Chat extends Component {
               roomUsers={roomUsers}
             />
           ) : null}
-<<<<<<< HEAD
-        </aside>
-=======
         </div> */}
 
->>>>>>> 0e93c14b9d318c1d31b11e99f1fced9e5049862a
       </div>
     );
   }
