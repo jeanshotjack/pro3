@@ -2,121 +2,161 @@ import Chatkit from '@pusher/chatkit-client';
 import axios from 'axios';
 
 function handleInput(event) {
-    const { value, name } = event.target;
+  const { value, name } = event.target;
 
-    this.setState({
-        [name]: value,
-    });
+  this.setState({
+    [name]: value,
+  });
 }
 
 function connectToRoom(id = "ee64eb31-72bd-4d05-a3f0-7bdb83a89968") {
-    const { currentUser } = this.state;
+  const { currentUser } = this.state;
 
-    this.setState({
-      messages: [],
-    });
+  this.setState({
+    messages: [],
+  });
 
-    return currentUser
-      .subscribeToRoom({
-        roomId: `${id}`,
-        messageLimit: 100,
-          hooks: {
-            onMessage: message => {
-              this.setState({
-                messages: [...this.state.messages, message],
-              });
-            },
-            onPresenceChanged: () => {
-              const { currentRoom } = this.state;
-              this.setState({
-                roomUsers: currentRoom.users.sort(a => {
-                  if (a.presence.state === 'online') return -1;
+  return currentUser
+    .subscribeToRoom({
+      roomId: `${id}`,
+      messageLimit: 100,
+      hooks: {
+        onMessage: message => {
+          this.setState({
+            messages: [...this.state.messages, message],
+          });
+        },
+        onPresenceChanged: () => {
+          const { currentRoom } = this.state;
+          this.setState({
+            roomUsers: currentRoom.users.sort(a => {
+              if (a.presence.state === 'online') return -1;
 
-                  return 1;
-                }),
-              });
-            },
-          },
-      })
-      .then(currentRoom => {
-        const roomName =
-          currentRoom.customData && currentRoom.customData.isDirectMessage
-            ? currentRoom.customData.userIds.filter(
-                id => id !== currentUser.id
-              )[0]
-            : currentRoom.name;
+              return 1;
+            }),
+          });
+        },
+      },
+    })
+    .then(currentRoom => {
+      const roomName =
+        currentRoom.customData && currentRoom.customData.isDirectMessage
+          ? currentRoom.customData.userIds.filter(
+            id => id !== currentUser.id
+          )[0]
+          : currentRoom.name;
 
-        this.setState({
-          currentRoom,
-          roomUsers: currentRoom.users,
-          rooms: currentUser.rooms,
-          roomName,
-        });
-      })
-      .catch(console.error);
-  }
+      this.setState({
+        currentRoom,
+        roomUsers: currentRoom.users,
+        rooms: currentUser.rooms,
+        roomName,
+      });
+    })
+    .catch(console.error);
+}
 
 
 function connectToChatkit(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const { userId } = this.state;
+  const { userId } = this.state;
 
-    if (userId === null || userId.trim() === '') {
-        alert('Invalid userId');
-        return;
-    }
-    console.log(userId);
-    axios
-        .post('/users', { userId })
-        .then(() => {
-            const tokenProvider = new Chatkit.TokenProvider({
-                url: '/authenticate',
+  if (userId === null || userId.trim() === '') {
+    alert('Invalid userId');
+    return;
+  }
+  console.log(userId);
+  axios
+    .post('/users', { userId })
+    .then(() => {
+      const tokenProvider = new Chatkit.TokenProvider({
+        url: '/authenticate',
+      });
+
+      const chatManager = new Chatkit.ChatManager({
+        instanceLocator: "v1:us1:ef7aa3e2-6df4-4a19-ab4d-3fc3fd246f84",
+        userId,
+        tokenProvider,
+      });
+
+      return chatManager
+        .connect({
+          onAddedToRoom: room => {
+            const { rooms } = this.state;
+            this.setState({
+              rooms: [...rooms, room],
             });
-
-            const chatManager = new Chatkit.ChatManager({
-                instanceLocator: "v1:us1:ef7aa3e2-6df4-4a19-ab4d-3fc3fd246f84",
-                userId,
-                tokenProvider,
-            });
-
-            return chatManager
-                .connect({
-                    onAddedToRoom: room => {
-                        const { rooms } = this.state;
-                        this.setState({
-                            rooms: [...rooms, room],
-                        });
-                    },
-                })
-                .then(currentUser => {
-                    this.setState(
-                        {
-                            currentUser,
-                            showLogin: false,
-                            rooms: currentUser.rooms,
-                        },
-                        () => connectToRoom.call(this)
-                    );
-                });
+          },
         })
-        .catch(console.error);
+        .then(currentUser => {
+          this.setState(
+            {
+              currentUser,
+              showLogin: false,
+              rooms: currentUser.rooms,
+            },
+            () => connectToRoom.call(this)
+          );
+        });
+    })
+    .catch(console.error);
 }
 
 function sendMessage(event) {
-    event.preventDefault();
-    const { newMessage, currentUser, currentRoom } = this.state;
+  event.preventDefault();
+  const { newMessage, currentUser, currentRoom } = this.state;
 
-    if (newMessage.trim() === '') return;
+  if (newMessage.trim() === '') return;
 
-    currentUser.sendMessage({
-      text: newMessage,
-      roomId: `${currentRoom.id}`,
-    });
+  currentUser.sendMessage({
+    text: newMessage,
+    roomId: `${currentRoom.id}`,
+  });
 
-    this.setState({
-      newMessage: '',
-    });
+  this.setState({
+    newMessage: '',
+  });
+}
+
+function createPrivateRoom(id) {
+  const { currentUser, rooms } = this.state;
+  const roomName = `${currentUser.id}_${id}`;
+
+  const isPrivateChatCreated = rooms.filter(room => {
+    if (room.customData && room.customData.isDirectMessage) {
+      const arr = [currentUser.id, id];
+      const { userIds } = room.customData;
+
+      if (arr.sort().join('') === userIds.sort().join('')) {
+        return {
+          room,
+        };
+      }
+    }
+
+    return false;
+  });
+
+  if (isPrivateChatCreated.length > 0) {
+    return Promise.resolve(isPrivateChatCreated[0]);
   }
 
-export { handleInput, connectToRoom, connectToChatkit, sendMessage }
+  return currentUser.createRoom({
+    name: `${roomName}`,
+    private: true,
+    addUserIds: [`${id}`],
+    customData: {
+      isDirectMessage: true,
+      userIds: [currentUser.id, id],
+    },
+  });
+}
+
+function sendDM(id) {
+  createPrivateRoom.call(this, id).then(room => {
+    connectToRoom.call(this, room.id);
+  });
+}
+
+export { handleInput, connectToRoom, connectToChatkit, sendMessage, createPrivateRoom, sendDM }

@@ -5,6 +5,7 @@ import {
   connectToChatkit,
   connectToRoom,
   sendMessage,
+  sendDM,
 } from '../components/Chat/methods';
 import Dialog from '../components/Chat/Dialog';
 
@@ -35,6 +36,7 @@ class Chat extends Component {
     this.connectToChatkit = connectToChatkit.bind(this);
     this.connectToRoom = connectToRoom.bind(this);
     this.sendMessage = sendMessage.bind(this);
+    this.sendDM = sendDM.bind(this);
   }
 
   render() {
@@ -52,7 +54,7 @@ class Chat extends Component {
 
     return (
       <div className="Chat">
-        <aside className="sidebar left-sidebar">
+        <div className="sidebar left-sidebar">
           {currentUser ? (
             <div className="user-profile">
               <span className="username">{currentUser.name}</span>
@@ -67,7 +69,7 @@ class Chat extends Component {
                   currentUser={currentUser}
                 />
               ) : null}
-        </aside>
+        </div>
         <section className="chat-screen">
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
@@ -88,7 +90,7 @@ class Chat extends Component {
             </form>
           </footer>
         </section>
-        <aside className="sidebar right-sidebar">
+        <div className="sidebar right-sidebar">
           {showLogin ? (
             <Dialog
               userId={userId}
@@ -99,10 +101,11 @@ class Chat extends Component {
           {currentRoom ? (
             <RoomUsers
               currentUser={currentUser}
+              sendDM={this.sendDM}
               roomUsers={roomUsers}
             />
           ) : null}
-        </aside>
+        </div>
       </div>
     );
   }
