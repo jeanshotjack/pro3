@@ -53,6 +53,7 @@ class Chat extends Component {
     } = this.state;
 
     return (
+      
       <div className="Chat">
         <aside className="sidebar left-sidebar">
           {currentUser ? (
@@ -69,7 +70,29 @@ class Chat extends Component {
                   currentUser={currentUser}
                 />
               ) : null}
+<<<<<<< HEAD
         </aside>
+=======
+        </div>
+
+        <div className="sidebar right-sidebar">
+          {showLogin ? (
+            <Dialog
+              userId={userId}
+              handleInput={this.handleInput}
+              connectToChatkit={this.connectToChatkit}
+            />
+          ) : null}
+          {currentRoom ? (
+            <RoomUsers
+              currentUser={currentUser}
+              sendDM={this.sendDM}
+              roomUsers={roomUsers}
+            />
+          ) : null}
+        </div>
+
+>>>>>>> 0e93c14b9d318c1d31b11e99f1fced9e5049862a
         <section className="chat-screen">
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
@@ -90,7 +113,13 @@ class Chat extends Component {
             </form>
           </footer>
         </section>
+<<<<<<< HEAD
         <aside className="sidebar right-sidebar">
+=======
+
+
+        {/* <div className="sidebar right-sidebar">
+>>>>>>> 0e93c14b9d318c1d31b11e99f1fced9e5049862a
           {showLogin ? (
             <Dialog
               userId={userId}
@@ -105,7 +134,12 @@ class Chat extends Component {
               roomUsers={roomUsers}
             />
           ) : null}
+<<<<<<< HEAD
         </aside>
+=======
+        </div> */}
+
+>>>>>>> 0e93c14b9d318c1d31b11e99f1fced9e5049862a
       </div>
     );
   }
