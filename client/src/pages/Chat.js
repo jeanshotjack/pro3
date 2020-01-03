@@ -9,6 +9,7 @@ import {
 import Dialog from '../components/Dialog';
 
 import RoomList from '../components/RoomList';
+import ChatSession from './components/ChatSession';
 
 import 'skeleton-css/css/normalize.css';
 import 'skeleton-css/css/skeleton.css';
@@ -70,7 +71,9 @@ class Chat extends Component {
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
           </header>
-          <ul className="chat-messages"></ul>
+          <ul className="chat-messages">
+            <ChatSession messages={messages} />
+          </ul>
           <footer className="chat-footer">
             <form onSubmit={this.sendMessage} className="message-form">
               <input
