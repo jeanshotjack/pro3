@@ -9,7 +9,7 @@ import {
 import Dialog from '../components/Dialog';
 
 import RoomList from '../components/RoomList';
-import ChatSession from './components/ChatSession';
+import ChatSession from '../components/ChatSession';
 
 import 'skeleton-css/css/normalize.css';
 import 'skeleton-css/css/skeleton.css';
