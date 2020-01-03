@@ -5,15 +5,16 @@ import {
   connectToChatkit,
   connectToRoom,
   sendMessage,
-} from '../methods';
-import Dialog from '../components/Dialog';
+} from '../components/Chat/methods';
+import Dialog from '../components/Chat/Dialog';
 
-import RoomList from '../components/RoomList';
-import ChatSession from '../components/ChatSession';
+import RoomList from '../components/Chat/RoomList';
+import ChatSession from '../components/Chat/ChatSession';
+import RoomUsers from '../components/Chat/RoomUsers';
 
 import 'skeleton-css/css/normalize.css';
 import 'skeleton-css/css/skeleton.css';
-import '../Chat.css';
+import '../components/Chat/Chat.css';
 
 class Chat extends Component {
   constructor() {
@@ -93,6 +94,12 @@ class Chat extends Component {
               userId={userId}
               handleInput={this.handleInput}
               connectToChatkit={this.connectToChatkit}
+            />
+          ) : null}
+          {currentRoom ? (
+            <RoomUsers
+              currentUser={currentUser}
+              roomUsers={roomUsers}
             />
           ) : null}
         </aside>
