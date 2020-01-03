@@ -53,6 +53,7 @@ class Chat extends Component {
     } = this.state;
 
     return (
+      
       <div className="Chat">
         <div className="sidebar left-sidebar">
           {currentUser ? (
@@ -70,6 +71,24 @@ class Chat extends Component {
                 />
               ) : null}
         </div>
+
+        <div className="sidebar right-sidebar">
+          {showLogin ? (
+            <Dialog
+              userId={userId}
+              handleInput={this.handleInput}
+              connectToChatkit={this.connectToChatkit}
+            />
+          ) : null}
+          {currentRoom ? (
+            <RoomUsers
+              currentUser={currentUser}
+              sendDM={this.sendDM}
+              roomUsers={roomUsers}
+            />
+          ) : null}
+        </div>
+
         <section className="chat-screen">
           <header className="chat-header">
           {currentRoom ? <h3>{roomName}</h3> : null}
@@ -90,7 +109,9 @@ class Chat extends Component {
             </form>
           </footer>
         </section>
-        <div className="sidebar right-sidebar">
+
+
+        {/* <div className="sidebar right-sidebar">
           {showLogin ? (
             <Dialog
               userId={userId}
@@ -105,7 +126,8 @@ class Chat extends Component {
               roomUsers={roomUsers}
             />
           ) : null}
-        </div>
+        </div> */}
+
       </div>
     );
   }
