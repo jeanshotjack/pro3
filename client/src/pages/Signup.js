@@ -65,12 +65,11 @@ class SignUp extends Component {
                 // else {
                 
                 console.log("encrypting...");
-                API.saveUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("account created"))
+                API.saveUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("login"))
                 // }
             }
         }
     }
-
     render() {
         return (
             <div>

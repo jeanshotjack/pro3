@@ -26,5 +26,8 @@ export default {
   },
   saveUser: function(user) {
     return axios.post("/api/users", user);
+  },
+  loginUser: function(user){
+    return axios.post("/api/login")
   }
   }
