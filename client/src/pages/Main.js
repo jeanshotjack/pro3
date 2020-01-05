@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
 import AllPosts from "../components/AllPosts";
-
 import API from "../utils/API";
 
 class Main extends Component {
@@ -41,9 +39,7 @@ class Main extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1>NOBIS</h1>
-            </Jumbotron>
+
             {this.state.Post.map((obj, index) => {
               return <AllPosts
                 title={obj.title}
@@ -62,7 +58,7 @@ class Main extends Component {
           </Col>
         </Row>
       </Container>
-      
+
     );
 
 
