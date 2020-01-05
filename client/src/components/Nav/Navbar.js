@@ -9,9 +9,8 @@ function NavBar(props) {
   return (
 
     <div>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">NOX</Navbar.Brand>
-        <Navbar fixed="top" />
+      <Navbar bg="dark" expand="lg">
+        <Navbar.Brand href="/">Nox</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className="container-fluid">

@@ -55,7 +55,7 @@ class Chat extends Component {
     return (
       
       <div className="Chat">
-        <div className="sidebar left-sidebar">
+        <aside className="sidebar left-sidebar">
           {currentUser ? (
             <div className="user-profile">
               <span className="username">{currentUser.name}</span>
@@ -70,7 +70,7 @@ class Chat extends Component {
                   currentUser={currentUser}
                 />
               ) : null}
-        </div>
+        </aside>
 
         <div className="sidebar right-sidebar">
           {showLogin ? (
