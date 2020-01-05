@@ -1,17 +1,18 @@
 import React from "react";
 
-function Login() {
+const Login = (props) => {
   return (
-    <form>
-  <div class="form-row">
-    <div class="col">
-      <input type="text" className="form-control" placeholder="User Name" />
+
+  <div className="form-row">
+    <div className="col">
+      <input type="text" onChange ={props.handleUserInput} className="form-control" placeholder="User Name" />
     </div>
-    <div class="col">
-      <input type="password" className="form-control" placeholder="password" />
+    <div className="col">
+      <input type="password" onChange ={props.handlePasswordInput} className="form-control" placeholder="password" />
     </div>
+    <button onClick={props.handleVer}> BUTTON TO CLICK </button>
   </div>
-</form>
+
   );
 }
 

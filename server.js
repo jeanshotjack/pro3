@@ -5,7 +5,7 @@ const app = express();
 const logger = require("morgan");
 const mongoose = require("mongoose");
 require('dotenv').config({ path: '.env' });
-
+const routes = require("./routes/APIroutes.js")
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const Chatkit = require('@pusher/chatkit-server');
@@ -16,6 +16,7 @@ app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(routes)
 mongoose.connect("mongodb://localhost/userdb", { useNewUrlParser: true });
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -35,27 +36,27 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/users', (req, res) => {
-  const { userId } = req.body;
-  console.log("text");
+// app.post('/users', (req, res) => {
+//   const { userId } = req.body;
+//   console.log("text");
 
-  chatkit
-    .createUser({
-      id: userId,
-      name: userId,
-    })
-    .then(() => {
-      res.sendStatus(201);
-    })
-    .catch(err => {
-      if (err.error === 'services/chatkit/user_already_exists') {
-        console.log(`User already exists: ${userId}`);
-        res.sendStatus(200);
-      } else {
-        res.status(err.status).json(err);
-      }
-    });
-});
+//   chatkit
+//     .createUser({
+//       id: userId,
+//       name: userId,
+//     })
+//     .then(() => {
+//       res.sendStatus(201);
+//     })
+//     .catch(err => {
+//       if (err.error === 'services/chatkit/user_already_exists') {
+//         console.log(`User already exists: ${userId}`);
+//         res.sendStatus(200);
+//       } else {
+//         res.status(err.status).json(err);
+//       }
+//     });
+// });
 
 app.post('/authenticate', (req, res) => {
   const authData = chatkit.authenticate({
@@ -63,6 +64,8 @@ app.post('/authenticate', (req, res) => {
   });
   res.status(authData.status).send(authData.body);
 });
+
+// app.post('/api/users')
 
 // app.set('port', PORT);
 // const server = app.listen(app.get('port'), () => {
