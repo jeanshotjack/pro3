@@ -8,7 +8,7 @@ const Signup = (props) => {
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card">
-            <div className="card-header">Sign Up to Nobis</div>
+            <div className="card-header">Sign Up</div>
             <div className="card-body"></div>
 
             <form onSubmit>
@@ -57,4 +57,4 @@ const Signup = (props) => {
 
 
 
-export default Signup
+export default Signup;

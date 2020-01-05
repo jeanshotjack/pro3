@@ -4,17 +4,14 @@ import "../CSS/General.css";
 
 
 function NavBar(props) {
-  // const [collapsed, setCollapsed] = useState(true);
-
-  // const toggleNavbar = () => setCollapsed(!collapsed);
 
 
   return (
-    <div>
 
-      {/* <Navbar class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm"> */}
-      <Navbar bg="dark" expand="lg">
-        <Navbar.Brand href="#home">NOBIS</Navbar.Brand>
+    <div>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="#home">NOX</Navbar.Brand>
+        <Navbar fixed="top" />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className="container-fluid">
@@ -30,21 +27,6 @@ function NavBar(props) {
         </Navbar.Collapse>
       </Navbar>
 
-
-
-      {/* <Navbar bg="dark" expand="lg">
-        <Navbar.Brand href="#home">NOBIS</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-
-            <Button id="loginBtn" href="/login" variant="outline-success">Login</Button>
-            <Button id="signUpBtn" href="/signup" variant="outline-success">Sign Up</Button>
-
-          </Nav>
-
-        </Navbar.Collapse>
-      </Navbar> */}
     </div >
   );
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
 import API from "../utils/API";
+import Image from "../components/NoxLogo/NoxLogo";
 
 class Main extends Component {
   state = {
@@ -39,7 +40,7 @@ class Main extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-
+    <Image />
             {this.state.Post.map((obj, index) => {
               return <AllPosts
                 title={obj.title}
@@ -54,7 +55,6 @@ class Main extends Component {
               />
 
             })}
-
           </Col>
         </Row>
       </Container>

@@ -16,7 +16,15 @@ body {
     padding: 5rem;
     margin: 5rem;
     border-radius: 5rem;
-    box-shadow: 10rem;
 
+  }
+
+  .noxLogo {
+    margin: 5rem;
+    border-radius: 8px;
+  }
+  
+  .nav-item {
+    padding: 2rem;
   }
   
