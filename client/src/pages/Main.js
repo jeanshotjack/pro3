@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
 import API from "../utils/API";
-import Image from "../components/NoxLogo/NoxLogo";
+import Footer from "../components/Footer/Footer";
 
 class Main extends Component {
   state = {
