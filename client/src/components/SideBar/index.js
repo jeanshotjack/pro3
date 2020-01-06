@@ -25,6 +25,17 @@ function SideBar(props) {
           <p className="font-main">
             Social Media: {props.userSocialMedia}
           </p>
+        <div className="form-group">
+          <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
+          <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
+        </div>
+
+        <div className="form-group">
+          <label for="post-description">Post</label>
+          <textarea className="form-control" id="post-description" aria-describedby="post-description"
+            placeholder="*Feelings*"></textarea>
+        </div>
+          
         </Col>
       </Row>
     </ListItem>
