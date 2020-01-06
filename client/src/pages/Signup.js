@@ -6,7 +6,7 @@ class SignUp extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: [],
+            username: "",
             password: "",
             confirm: "",
             email: "",
@@ -46,7 +46,7 @@ class SignUp extends Component {
         this.setState({ gender: event.target.value })
     }
     handleVer = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         console.log("Click")
         if (!this.state.username ||
             !this.state.password ||
@@ -58,22 +58,25 @@ class SignUp extends Component {
             if (this.state.confirm !== this.state.password) {
                 console.log("Passwords do not match")
             }
+            else if (!this.state.username || !this.state.password || !this.state.confirm || !this.state.email){
+                console.log("Please fill in all fields")
+            }
             else {
-                // if (db.Accounts.get({username:this.state.username}) != 0){
-                //     console.log("user already exists")
-                // }
-                // else {
-                
                 console.log("encrypting...");
-                API.saveUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("login"))
-                // }
+                API.saveUser({
+                    username: this.state.username,
+                    password: this.state.password,
+                    email: this.state.email
+                })
+                    .then(res => console.log("Signed Up: " + JSON.stringify(res)))
+                    .catch(err => console.log(err))
             }
         }
     }
     render() {
         return (
             <div>
-                <SignUpPage handleUser={this.handleUser} handlePassword={this.handlePassword} handleConfirm={this.handleConfirm} handleEmail={this.handleEmail} handleDOB={this.handleDOB} handleGender={this.handleGender} handleVer={this.handleVer} />
+                <SignUpPage handleUser={this.handleUser} handlePassword={this.handlePassword} handleConfirm={this.handleConfirm} handleEmail={this.handleEmail} handleDOB={this.handleDOB} handleGender={this.handleGender} onClick={this.handleVer} />
             </div>
         )
     }

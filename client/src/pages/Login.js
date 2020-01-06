@@ -29,7 +29,7 @@ handleLogin = (event) => {
 render() {
     return (
         <div>
-            <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} handleLogin ={this.handleLogin}/>
+            <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} OnClick ={this.handleLogin}/>
         </div>
     )
 }

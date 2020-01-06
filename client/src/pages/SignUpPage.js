@@ -24,7 +24,7 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
-                  <input type="text" onChange={props.handleUser} className="form-control" placeholder="User Name" />
+                  <input type="text" onChange={props.handleUser}  className="form-control" placeholder="User Name" />
                 </div>
               </div>
 
@@ -42,7 +42,7 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
-                  <button type="submit"> Submit </button>
+                  <button onClick={props.onClick}> Submit </button>
                 </div>
               </div>
 

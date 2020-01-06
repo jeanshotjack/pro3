@@ -1,14 +1,13 @@
 const express = require("express");
 const path = require("path");
-
-const PORT = process.env.PORT || 3001;
 const app = express();
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const PORT = process.env.PORT || 3001;
 require('dotenv').config({ path: '.env' });
-const routes = require("./routes/APIroutes.js")
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const routes = require("./routes/APIroutes")
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
 const Chatkit = require('@pusher/chatkit-server');
 
 
@@ -17,12 +16,16 @@ app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(routes)
-mongoose.connect("mongodb://localhost/userdb", { useNewUrlParser: true });
-// Serve up static assets (usually on heroku)
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(routes)
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb");
+// Serve up static assets (usually on heroku)
+
 // Define API routes here
 // Send every other request to the React app
 // Define any API routes before this runs
@@ -33,9 +36,9 @@ const chatkit = new Chatkit.default({
   key: process.env.CHATKIT_SECRET_KEY,
 });
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(cors());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.post('/users', (req, res) => {
 //   const { userId } = req.body;
@@ -73,7 +76,7 @@ app.post('/authenticate', (req, res) => {
 //   console.log(`Express running → PORT ${server.address().port}`);
 // });
 
-require("./controlers/apiRoutes")(app)
+// require("./controlers/apiRoutes")(app)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });

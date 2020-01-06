@@ -1,4 +1,4 @@
-const db = require("../Models/accountSchema");
+const db = require("../Models");
 
 // Defining methods for the booksController
 module.exports = {
@@ -9,38 +9,33 @@ findAll: function(req, res) {
         .catch(err => res.status(422).json(err));
       }, 
 create: function(req, res) {
+  let userInfo = req.body
+  console.log(userInfo)
+  db.User
+  .findOne({username: req.body} && {password:req.body}), function(err, existingUser){
+    if (existingUser === null){
     db.User
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-      },
-saveUser: function(req,res){
-  console.log("check")
+    }
+    else{
+      console.log("User Exists")
+    }
+      }
+    },
+login: function(req, res){
   db.User
-  .insertOne({
-  "password" : req.body,
-  "username" : req.body,
-  "email" : req.body,
-  "gender" : req.body
-})
-  .then(dbModel => res.json(dbModel))
-  .catch(err => res.status(422).json(err));
-},
-verify: function(req,res){
-  db.User
-  .find(req.query)
-  .then(console.log(req.query))
-},
-test: function(req,res){
-  console.log(req.body)
+  .findOne(({username: req.body.username} && {password:req.body.password}), function(err, existingUser){
+    if(existingUser === null){
+      console.log("User Doesnt Exist")
+    }
+    else{
+      console.log("Loged In")
+    }
+    }
+  }
 }
-// app.post("/api/users", function(req, res) {
-//   console.log("Posting");
-//   var userInfo = req.body;
-//   if (!userInfo.username || !userInfo.password) {
-//     console.log("Fill in all fields")
-//   } 
-// }
 
 // app.post("/api/signin", function(req, res) {
 //     console.log("Posting");
@@ -70,7 +65,4 @@ test: function(req,res){
 //           } else {
 //             console.log("Log in Failed");
 //           }
-//         });
-//     }
-//   });
-}
+//        
