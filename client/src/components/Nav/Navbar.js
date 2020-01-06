@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import "../CSS/General.css";
 
+
 function NavBar(props) {
 
 
@@ -12,14 +13,7 @@ function NavBar(props) {
         <Navbar.Brand href="/"></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <img className="noxNav" href="/home" src={require("../Nav/noxNavbar.png")} />
-
-          <div className="container-fluid">
-            <ul className="navbar-nav ml-auto">
-
-              <li className="nav-item active btn"><Button href="/logout" variant="primary">Log Out</Button></li>
-            </ul>
-          </div >
+        <a href="/"><img className="noxNav" href="/home" src={require("../Nav/noxNavbar.png")} /></a>   
         </Navbar.Collapse>
       </Navbar>
 
@@ -27,9 +21,11 @@ function NavBar(props) {
         <div className="container-fluid">
           <div className="row justify-content-center">
             <img className="noxLogo" src={require("../NoxLogo/noxLogo.png")} />
+            
           </div>
         </div>
       </div>
+
       {/* <div>
         <Button href="/login" className="primary login">Login</Button>
         {"  "}

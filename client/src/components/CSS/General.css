@@ -21,8 +21,8 @@ body {
 
   .noxNav {
     border-radius: 10px;
-    height: 8%;
-    width: 8%;
+    height: 25%;
+    width: 25%;
   }
   
   .nav-item {
@@ -48,15 +48,16 @@ body {
     /* overflow: hidden; */
   }
 
-  .btn {
+  .logout {
     font-size: 15px;
+    
   }
   .login {
-    font-size: 20px;
+    font-size: 15px;
     
   }
   .signup {
-    font-size: 20px;
+    font-size: 15px;
     
   }
 
