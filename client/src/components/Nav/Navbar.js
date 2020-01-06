@@ -23,7 +23,7 @@ function NavBar(props) {
         </Navbar.Collapse>
       </Navbar>
       
-      {/* <div>
+      <div>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-8"></div>
@@ -39,7 +39,7 @@ function NavBar(props) {
           <small>Jack Shalenkova | Bai-Ling Zhang | Sean Melvin | Mustafa Muhammad</small>
         </div>
       </footer>
-      </div> */}
+      </div>
 
 
     </div>
