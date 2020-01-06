@@ -40,7 +40,6 @@ class Main extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-    <Image />
             {this.state.Post.map((obj, index) => {
               return <AllPosts
                 title={obj.title}

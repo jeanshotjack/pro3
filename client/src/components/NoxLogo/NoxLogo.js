@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const NoxLogo = () => {
+const NoxLogo = (props) => {
   return (
 
     <div>
