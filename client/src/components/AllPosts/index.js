@@ -16,9 +16,7 @@ function AllPosts(props) {
         </Col>
         <Col size="md-4">
           <div className="btn-container">
-            <a className="btn btn-secondary" href={props.link} target="Dashboard">
-              About
-            </a>
+            <button className="btn btn-secondary" data-index={props.index} onClick={props.handAuthorPrompt}> Author </button>
             <button className="btn btn-secondary" data-index={props.index} onClick={props.handleFlagPost}> Flag </button>
           </div>
         </Col>
