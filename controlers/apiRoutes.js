@@ -5,7 +5,7 @@ const post = require("../Models/postSchema");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/postslist"
+  "mongodb://localhost/posts"
 );
 
 // Creating a test data in postslist collection
