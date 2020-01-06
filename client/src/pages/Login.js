@@ -6,7 +6,7 @@ class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: [],
+            username: "",
             password: "",
         }
     }
@@ -23,13 +23,13 @@ handlePasswordInput = (event) => {
 handleLogin = (event) => {
     event.preventDefault();
     console.log("clicked")
-    API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("account created"))
+    API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("account logged in"))
 }
 
 render() {
     return (
         <div>
-            <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} handleLogin ={this.handleLogin}/>
+            <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} OnClick ={this.handleLogin}/>
         </div>
     )
 }

@@ -1,46 +1,49 @@
-const db = require("../Models/accountSchema");
+const db = require("../Models");
 
 // Defining methods for the booksController
 module.exports = {
-findAll: function(req, res) {
+  findAll: function (req, res) {
     db.User
-        .find(req.query)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-      }, 
-create: function(req, res) {
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  create: function (req, res) {
+    const userInfo = req.body
+    console.log(userInfo)
     db.User
-        .create(req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-      },
-saveUser: function(req,res){
-  console.log("check")
-  db.User
-  .insertOne({
-  "password" : req.body,
-  "username" : req.body,
-  "email" : req.body,
-  "gender" : req.body
-})
-  .then(dbModel => res.json(dbModel))
-  .catch(err => res.status(422).json(err));
-},
-verify: function(req,res){
-  db.User
-  .find(req.query)
-  .then(console.log(req.query))
-},
-test: function(req,res){
-  console.log(req.body)
+      .findOne({ username: userInfo.username }, (err, existingUser) => {
+        if (err) {
+          console.log("Error in post: " + err)
+        }
+        else if (existingUser) {
+          console.log("username exists")
+        } else {
+          db.User
+            .create(req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+        }
+      })
+  },
+  loginUser: function (req, res) {
+    const userInfo = req.body
+    console.log(userInfo)
+    console.log("got to Login User")
+    db.User
+      .findOne({ username: userInfo.username } && { password: userInfo.password }, (err, existingUser) => {
+        if (err){
+          console.log("error in get" + err)
+        }
+        else if (existingUser) {
+          console.log(userInfo)
+          console.log("user exists so log in")
+        }
+        
+      })
+  }
 }
-// app.post("/api/users", function(req, res) {
-//   console.log("Posting");
-//   var userInfo = req.body;
-//   if (!userInfo.username || !userInfo.password) {
-//     console.log("Fill in all fields")
-//   } 
-// }
+
 
 // app.post("/api/signin", function(req, res) {
 //     console.log("Posting");
@@ -70,7 +73,4 @@ test: function(req,res){
 //           } else {
 //             console.log("Log in Failed");
 //           }
-//         });
-//     }
-//   });
-}
+//        

@@ -21,7 +21,7 @@ function Login(props) {
 
               <div className="form-group">
                 <div className="col">
-                  <button type="submit"> Submit </button>
+                  <button onClick = {props.OnClick}> Submit </button>
                 </div>
               </div>
 

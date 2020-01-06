@@ -28,6 +28,6 @@ export default {
     return axios.post("/api/users", user);
   },
   loginUser: function(user){
-    return axios.post("/api/login")
+    return axios.post("/api/login", user)
   }
   }
