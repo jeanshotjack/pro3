@@ -34,6 +34,9 @@ const UserSchema = new Schema({
   userCreated: {
     type: Date,
     default: Date.now
+  },
+  social: {
+    type: String
   }
 });
 
