@@ -26,10 +26,13 @@ html {
 
   .right-sidebar {
     border-left: 1px solid #ccc;
+    float: right;
+
   }
 
   .left-sidebar {
     border-right: 1px solid #ccc;
+    float: left;
   }
 
   .user-profile {
