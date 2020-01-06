@@ -4,7 +4,11 @@ const apiController = require("../controlers/APIcontroler");
 router.route("/api/users/")
   .get(apiController.findAll)
   .post(apiController.create)
+  
   // .post(apiController.saveUser)
+
   router.route("/api/login")
-  .get(apiController.login)
+  .post(apiController.loginUser)
+  // .get(apiController.findAll)
+  // .post(apiController.loginUser)
   module.exports = router;

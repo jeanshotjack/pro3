@@ -16,7 +16,7 @@ const Signup = (props) => {
 
                 <div className="form-group">
                   <div className="col">
-                    <input type="email" onChange={props.handleEmail} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                    <input type="email" value ={props.email} onChange={props.handleEmail} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                 </div>
@@ -24,19 +24,19 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
-                  <input type="text" onChange={props.handleUser}  className="form-control" placeholder="User Name" />
+                  <input type="text" value ={props.username} onChange={props.handleUser}  className="form-control" placeholder="User Name" />
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="col">
-                  <input type="password" onChange={props.handlePassword} className="form-control" placeholder="password" />
+                  <input type="password" value ={props.password} onChange={props.handlePassword} className="form-control" placeholder="password" />
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="col">
-                  <input type="password" className="form-control" onChange={props.handleConfirm} placeholder="confirm password" />
+                  <input type="password" value ={props.confirm} className="form-control" onChange={props.handleConfirm} placeholder="confirm password" />
                 </div>
               </div>
 
