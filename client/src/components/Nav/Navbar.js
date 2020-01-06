@@ -17,7 +17,7 @@ function NavBar(props) {
           <div className="container-fluid">
             <ul className="navbar-nav ml-auto">
 
-              <li className="nav-item active"><Button href="/logout" variant="primary">Log Out</Button></li>
+              <li className="nav-item active btn"><Button href="/logout" variant="primary">Log Out</Button></li>
             </ul>
           </div >
         </Navbar.Collapse>
@@ -32,8 +32,8 @@ function NavBar(props) {
         </div>
       </div>
       
-      <div className="containter">
-      <footer className="py-4 bg-dark text-white-50 page-footer">
+      <div className="containter-fluid">
+      <footer className="py-4 bg-dark text-white-50 page-footer ">
         <div className="container text-center">
           <medium>Copyright &copy; NOX 2020</medium>
           <small>Jack Shalenkova | Bai-Ling Zhang | Sean Melvin | Mustafa Muhammad</small>
