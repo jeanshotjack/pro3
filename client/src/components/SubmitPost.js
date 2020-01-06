@@ -22,13 +22,8 @@ class SubmitPost extends React.Component{
             {this.postToDB(this.props)}
             }>
             Submit
-<<<<<<< HEAD
-          </Button>
-          </div>
-=======
         </button>
         </div>
->>>>>>> e1d3e555be60e379ddb43219383c121075e80b5e
         );
     }
   }

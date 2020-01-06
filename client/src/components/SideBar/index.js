@@ -9,7 +9,7 @@ function SideBar(props) {
   return (
     <ListItem>
       <Row className="flex-wrap-reverse">
-        <Col>
+        <Col size="md-8">
           
         </Col>
       </Row>
