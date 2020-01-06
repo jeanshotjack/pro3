@@ -46,7 +46,7 @@ class Main extends Component {
       <Container fluid>
         <Row>
           <Col size="md-2">
-            {/* <SideBar /> */}
+            <SideBar />
           </Col>
           <Col size="md-10">
             {this.state.mock_posts.map((obj, index) => {
