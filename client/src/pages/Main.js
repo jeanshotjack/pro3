@@ -49,7 +49,7 @@ class Main extends Component {
                 title={obj.title}
                 User={obj.User}
                 postCreated={obj.postCreated}
-                // link={obj.link}
+                link={obj.link}
                 body={obj.body}
 
                 idInDatabase={obj._id}

@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 const { mongooseAssociation } = require('mongoose-association');
 mongooseAssociation(mongoose);
 var Schema = mongoose.Schema;
+
 const PostSchema = new Schema({
     title: {
         type: String,
