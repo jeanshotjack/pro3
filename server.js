@@ -40,27 +40,27 @@ const chatkit = new Chatkit.default({
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.post('/users', (req, res) => {
-//   const { userId } = req.body;
-//   console.log("text");
+app.post('/users', (req, res) => {
+  const { userId } = req.body;
+  console.log("text");
 
-//   chatkit
-//     .createUser({
-//       id: userId,
-//       name: userId,
-//     })
-//     .then(() => {
-//       res.sendStatus(201);
-//     })
-//     .catch(err => {
-//       if (err.error === 'services/chatkit/user_already_exists') {
-//         console.log(`User already exists: ${userId}`);
-//         res.sendStatus(200);
-//       } else {
-//         res.status(err.status).json(err);
-//       }
-//     });
-// });
+  chatkit
+    .createUser({
+      id: userId,
+      name: userId,
+    })
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch(err => {
+      if (err.error === 'services/chatkit/user_already_exists') {
+        console.log(`User already exists: ${userId}`);
+        res.sendStatus(200);
+      } else {
+        res.status(err.status).json(err);
+      }
+    });
+});
 
 app.post('/authenticate', (req, res) => {
   const authData = chatkit.authenticate({

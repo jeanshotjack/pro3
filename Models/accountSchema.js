@@ -16,6 +16,12 @@ const UserSchema = new Schema({
     type: String,
     unique: true,
   },
+  pronouns: {
+    type: String
+  },
+  DOB: {
+    type: Date,
+  },
   userCreated: {
     type: Date,
     default: Date.now

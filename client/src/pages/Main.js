@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
+import SideBar from "../components/SideBar";
 import API from "../utils/API";
+
+import Footer from "../components/Footer/Footer";
+
 import Image from "../components/NoxLogo/NoxLogo";
+import mock_posts from "../mock_posts.json";
+
 
 class Main extends Component {
   state = {
-    Post: [],
+    mock_posts,
     flag: false,
     error: "",
   };
@@ -39,13 +45,15 @@ class Main extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            {this.state.Post.map((obj, index) => {
+          <Col size="md-2">
+            {/* <SideBar /> */}
+          </Col>
+          <Col size="md-10">
+            {this.state.mock_posts.map((obj, index) => {
               return <AllPosts
                 title={obj.title}
                 User={obj.User}
                 postCreated={obj.postCreated}
-                link={obj.link}
                 body={obj.body}
 
                 idInDatabase={obj._id}

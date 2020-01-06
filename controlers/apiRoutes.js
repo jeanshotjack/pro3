@@ -5,7 +5,7 @@ const post = require("../Models/postSchema");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/postslist"
+  "mongodb://localhost/posts"
 );
 
 // Creating a test data in postslist collection
@@ -15,7 +15,6 @@ const postSeed = [
 
     body: "Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature.",
 
-    link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api",
     title: "The Hunger Games",
   
     postCreated: new Date(Date.now())

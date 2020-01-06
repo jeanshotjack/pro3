@@ -20,6 +20,7 @@ body {
   }
 
   .noxLogo {
+    padding: 20%;
     margin: 5rem;
     border-radius: 8px;
   }
@@ -34,10 +35,6 @@ body {
     padding: 2rem;
   }
   
-  .navColor {
-    color: grey;
-  }
-  
   .h1 {
     color: rgb(255, 255, 255);
   }
@@ -47,3 +44,13 @@ body {
     width: 50%;
     border-radius: 35%;
   }
+
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -50px;
+}
