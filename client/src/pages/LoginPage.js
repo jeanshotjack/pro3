@@ -1,18 +1,35 @@
 import React from "react";
 
-const Login = (props) => {
+function Login() {
   return (
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-8">
+          <div className="card">
+            <div className="card-header" align="center">Login</div>
+            <div className="card-body"></div>
+            <form>
 
-  <div className="form-row">
-    <div className="col">
-      <input type="text" onChange ={props.handleUserInput} className="form-control" placeholder="User Name" />
-    </div>
-    <div className="col">
-      <input type="password" onChange ={props.handlePasswordInput} className="form-control" placeholder="password" />
-    </div>
-    <button onClick={props.handleLogin}> BUTTON TO CLICK </button>
-  </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" className="form-control" placeholder="User Name" />
+                </div>
+                <div class="col">
+                  <input type="password" className="form-control" placeholder="password" />
+                </div>
+              </div>
 
+              <div className="form-group">
+                <div className="col">
+                  <button type="submit"> Submit </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

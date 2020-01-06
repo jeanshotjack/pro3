@@ -24,8 +24,8 @@ handleLogin = (event) => {
     event.preventDefault();
     console.log("clicked")
     API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("account created"))
-
 }
+
 render() {
     return (
         <div>
