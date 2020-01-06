@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 const logger = require("morgan");
@@ -72,6 +73,7 @@ app.post('/authenticate', (req, res) => {
 //   console.log(`Express running → PORT ${server.address().port}`);
 // });
 
+require("./controlers/apiRoutes")(app)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
