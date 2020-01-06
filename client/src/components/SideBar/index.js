@@ -11,19 +11,19 @@ function SideBar(props) {
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
           <p className="font-main">
-            Hello! (Tom){props.userName}
+            Hello! (Tom){props.username}
           </p>
           <p className="font-main">
             Profile: {props.userProfile}
           </p>
           <p className="font-main">
-            Pronoun: {props.userPronoun}
+            Pronouns: {props.pronouns}
           </p>
           <p className="font-main">
-            User Name: {props.userName}
+            User Name: {props.username}
           </p>
           <p className="font-main">
-            Social Media: {props.userSocialMedia}
+            Social Media: {props.social}
           </p>
         <div className="form-group">
           <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
