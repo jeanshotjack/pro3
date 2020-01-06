@@ -25,6 +25,12 @@ const UserSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
+  pronouns: {
+    type: String
+  },
+  DOB: {
+    type: Date,
+  },
   userCreated: {
     type: Date,
     default: Date.now
