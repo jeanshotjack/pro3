@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
+import SideBar from "../components/SideBar";
 import API from "../utils/API";
 
 import Footer from "../components/Footer/Footer";
@@ -44,7 +45,10 @@ class Main extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-2">
+            {/* <SideBar /> */}
+          </Col>
+          <Col size="md-10">
             {this.state.mock_posts.map((obj, index) => {
               return <AllPosts
                 title={obj.title}
