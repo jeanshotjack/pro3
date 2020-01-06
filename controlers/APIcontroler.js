@@ -30,6 +30,9 @@ verify: function(req,res){
   db.User
   .find(req.query)
   .then(console.log(req.query))
+},
+test: function(req,res){
+  console.log(req.body)
 }
 // app.post("/api/users", function(req, res) {
 //   console.log("Posting");

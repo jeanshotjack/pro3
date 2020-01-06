@@ -1,6 +1,6 @@
 import React from "react";
 
-function Login() {
+function Login(props) {
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -12,10 +12,10 @@ function Login() {
 
               <div class="form-row">
                 <div class="col">
-                  <input type="text" className="form-control" placeholder="User Name" />
+                  <input type="text" onChange = {props.handleUserInput} className="form-control" placeholder="User Name" />
                 </div>
                 <div class="col">
-                  <input type="password" className="form-control" placeholder="password" />
+                  <input type="password" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
                 </div>
               </div>
 
