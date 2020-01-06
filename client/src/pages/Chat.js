@@ -110,24 +110,6 @@ class Chat extends Component {
           </footer>
         </section>
 
-
-        {/* <div className="sidebar right-sidebar">
-          {showLogin ? (
-            <Dialog
-              userId={userId}
-              handleInput={this.handleInput}
-              connectToChatkit={this.connectToChatkit}
-            />
-          ) : null}
-          {currentRoom ? (
-            <RoomUsers
-              currentUser={currentUser}
-              sendDM={this.sendDM}
-              roomUsers={roomUsers}
-            />
-          ) : null}
-        </div> */}
-
       </div>
     );
   }
