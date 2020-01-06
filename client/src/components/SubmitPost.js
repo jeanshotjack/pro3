@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Button";
 import axios from "axios";
 
 class SubmitPost extends React.Component{
@@ -19,12 +18,17 @@ class SubmitPost extends React.Component{
     render() {
         return (
           <div>
-          <Button type="primary" onClick={() => 
+          <button className="primary" onClick={() => 
             {this.postToDB(this.props)}
             }>
             Submit
+<<<<<<< HEAD
           </Button>
           </div>
+=======
+        </button>
+        </div>
+>>>>>>> e1d3e555be60e379ddb43219383c121075e80b5e
         );
     }
   }
