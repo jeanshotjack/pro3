@@ -29,7 +29,7 @@ function NavBar(props) {
       <div>
         <div className="container-fluid">
           <div className="row justify-content-center">
-            <img className="noxLogo" src={require("../NoxLogo/noxLogo.png")} />
+          <img className="noxLogo" src={require("../NoxLogo/noxLogoMain.png")} />
           </div>
         </div>
       </div>

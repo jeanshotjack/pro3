@@ -8,7 +8,7 @@ const NoxLogo = (props) => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8"></div>
-          <img className="noxLogo" src={require("../NoxLogo/noxLogo.png")} />
+          <img className="noxLogo" src={require("../NoxLogo/noxLogoMain.png")} />
         </div>
       </div>
     </div>
