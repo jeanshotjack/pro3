@@ -5,13 +5,14 @@ import AllPosts from "../components/AllPosts";
 import SideBar from "../components/SideBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/Footer";
-import mock_posts from "../mock_posts.json";
-
+// import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
   state = {
-    // User,
-    mock_posts,
+    username: "(username)",
+    pronouns: "",
+    social: "",
+    mock_posts: [],
     flag: false,
     error: "",
   };
@@ -29,7 +30,7 @@ class Main extends Component {
 
   getPosts = () => {
     API.getPosts()
-      .then(res => this.setState({ Post: res.data }))
+      .then(res => this.setState({ mock_posts: res.data }))
       .catch(err => console.log(err));
   };
 
