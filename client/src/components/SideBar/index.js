@@ -11,7 +11,7 @@ function SideBar(props) {
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
           <p className="font-main">
-            Hello! (Tom){props.username}
+            Hello! {props.username}
           </p>
           {/* <p className="font-main">
             Profile: {props.userprofile}
