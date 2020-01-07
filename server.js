@@ -4,6 +4,7 @@ const app = express();
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
+
 require('dotenv').config({ path: '.env' });
 const routes = require("./routes/APIroutes")
 // const bodyParser = require('body-parser');
@@ -16,6 +17,20 @@ app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(express.session({
+  secret: 'JumpJumpJumpJumpAround',
+  cookie: { maxAge: 2628000000 },
+  store: new (require('express-sessions'))({
+      storage: 'mongodb',
+      instance: mongoose, // optional
+      host: 'localhost', // optional
+      port: 27017, // optional
+      db: 'userdb', // optional
+      collection: 'sessions', // optional
+      expire: 86400 // optional
+  })
+}));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
