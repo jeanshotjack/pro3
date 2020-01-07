@@ -10,42 +10,8 @@ function SideBar(props) {
     <ListItem>
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
-<<<<<<< HEAD
-
-          {/* <p className="font-main">
-              Hello! (Tom){props.userName}
-            </p>
-            <p className="font-main">
-              Profile: {props.userProfile}
-            </p>
-            <p className="font-main">
-              Pronoun: {props.userPronoun}
-            </p>
-            <p className="font-main">
-              User Name: {props.userName}
-            </p>
-            <p className="font-main">
-              Social Media: {props.userSocialMedia}
-            </p>
-
-
-            <div className="form-group">
-              <label for="post-text"><medium className="bolder-text">New Post</medium></label>
-              <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
-            </div>
-
-            <div className="form-group">
-              <label for="post-description">Post</label>
-              <textarea className="form-control" id="post-description" aria-describedby="post-description"
-                placeholder="*Feelings*"></textarea>
-            </div>
-          </div> */}
-
-
           <div className="sidenav">
-            {/* <a>
-              <img alt="" src={require("../ProfilePage/profile.png")} className="rounded-circle profilePic" />
-            </a> */}
+          
             <p className="font-main">
               Hello! (Tom){props.username}
             </p>
@@ -65,25 +31,6 @@ function SideBar(props) {
               <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
               <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
             </div>
-=======
-          <p>
-            Hello! {props.username}
-          </p>
-          <p >
-            Pronouns: {props.pronouns}
-          </p>
-          <p >
-            User Name: {props.username}
-          </p>
-          <p >
-            Social Media: {props.social}
-          </p>
-          
-          <div className="form-group">
-            <label for="post-text">New Post</label>
-            <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
-          </div>
->>>>>>> d5a6ad29c428bc9edb76ef573148ecccf0d6f920
 
             <div className="form-group">
               <label for="post-description">Post</label>
@@ -91,7 +38,6 @@ function SideBar(props) {
                 placeholder="*Feelings*"></textarea>
             </div>
           </div>
-          <SubmitPost></SubmitPost>
         </Col>
       </Row>
     </ListItem >
