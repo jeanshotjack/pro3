@@ -9,6 +9,7 @@ router.route("/api/users/")
 
   router.route("/api/login")
   .post(apiController.loginUser)
+  .get(apiController.sessions)
   // .get(apiController.findAll)
   // .post(apiController.loginUser)
   module.exports = router;

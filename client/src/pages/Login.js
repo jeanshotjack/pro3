@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import LoginPage from "./LoginPage";
 import API from "../utils/API";
+
+const [isAuthenticated, userHasAuthenticated] = useState(false)
 class Login extends Component {
     // eslint-disable-next-line no-useless-constructor
     constructor(props) {
@@ -8,6 +10,7 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
+            isAuthenticated: false
         }
     }
 handleUserInput = (event) => {
@@ -22,8 +25,9 @@ handlePasswordInput = (event) => {
      }
 handleLogin = (event) => {
     event.preventDefault();
-    console.log("clicked")
-    API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("account logged in"))
+    props.userHasAuthenticated(true);
+    API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(this.setState({isAuthenticated:true}))
+    API.sessions({username: this.state.username, password:this.state.password}).then(console.log("In session function"))
 }
 
 render() {

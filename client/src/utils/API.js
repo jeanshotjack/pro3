@@ -29,5 +29,8 @@ export default {
   },
   loginUser: function(user){
     return axios.post("/api/login", user)
+  },
+  sessions: function(user){
+    return axios.post("/api/login", user)
   }
   }
