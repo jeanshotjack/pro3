@@ -1,4 +1,5 @@
 const db = require("../Models");
+const sessionstorage = require("sessionstorage");
 
 // Defining methods for the booksController
 module.exports = {
@@ -39,10 +40,25 @@ module.exports = {
           console.log(userInfo)
           console.log("user exists so log in")
         }
+        else{
+          console.log("no user exists")
+        }
         
       })
+  },
+  session: function(req, res) {
+    if (sessionstorage.getItem("user")) {
+      res.render("index", {
+        user: sessionstorage.getItem("user")
+      });
+      console.log("success");
+      // res.json(sessionstorage.getItem("user"));
+    } else {
+      res.redirect("/login");
+    }
   }
 }
+
 
 
 // app.post("/api/signin", function(req, res) {
