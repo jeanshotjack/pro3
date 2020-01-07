@@ -8,7 +8,6 @@ import Footer from "../components/Footer/Footer";
 import mock_posts from "../mock_posts.json";
 import axios from "axios";
 
-
 class Main extends Component {
   state = {
     username: "(username)",
