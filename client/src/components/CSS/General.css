@@ -7,9 +7,11 @@ body {
   .card {
     background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
     padding: 5rem;
-    margin: 5rem;
-    border-radius: 2rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    margin: 3rem;
+    border-radius: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 5px 5px 40px blue;
+    
   }
 
   .noxLogo {
@@ -59,6 +61,21 @@ body {
   .signup {
     font-size: 15px;
     
+  }
+  .chat {
+    font-size: 15px;
+    
+  }
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background: rgb(143, 204, 240);
   }
 
   
