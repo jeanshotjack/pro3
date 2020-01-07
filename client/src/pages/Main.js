@@ -7,7 +7,6 @@ import API from "../utils/API";
 import Footer from "../components/Footer/Footer";
 import mock_posts from "../mock_posts.json";
 
-
 class Main extends Component {
   state = {
     username: "(username)",
