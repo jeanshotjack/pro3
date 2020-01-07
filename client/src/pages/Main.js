@@ -6,15 +6,19 @@ import PostForm from "../components/SideBar/index";
 import SideBar from "../components/SideBar/sidebar";
 import API from "../utils/API";
 import Footer from "../components/Footer/Footer";
+<<<<<<< HEAD
 import mock_posts from "../mock_posts.json";
 import axios from "axios";
+=======
+// import mock_posts from "../mock_posts.json";
+>>>>>>> 055757c558cd9dd1645ae23e374e7e12cba58684
 
 class Main extends Component {
   state = {
     username: "(username)",
     pronouns: "",
     social: "",
-    mock_posts,
+    mock_posts: [],
     flag: false,
     error: "",
   };
@@ -32,7 +36,7 @@ class Main extends Component {
 
   getPosts = () => {
     API.getPosts()
-      .then(res => this.setState({ Post: res.data }))
+      .then(res => this.setState({ mock_posts: res.data }))
       .catch(err => console.log(err));
   };
 
