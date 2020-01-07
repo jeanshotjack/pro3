@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const post = require("../Models/postSchema");
+const db = require("../Models");
 
 // This file empties the Books collection and inserts the books below
 
@@ -21,26 +21,26 @@ const postSeed = [
   },
 ];
 
-// post
-//   .remove({})
-//   .then(() => post.collection.insertMany(postSeed))
-//   .then(data => {
-//     console.log(data.result.n + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     process.exit(1);
-//   });
-
-
-module.exports=function(app){
-  app.get("/api/posts", function (req,res) {
-    console.log("apicall")
-    post.find({}).then(function (data) {
-      console.log(data)
-      res.json(data)
-    })
+db.Post
+  .remove({})
+  .then(() => db.Post.collection.insertMany(postSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
   })
-}
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+// module.exports=function(app){
+//   app.get("/api/posts", function (req,res) {
+//     console.log("apicall")
+//     post.find({}).then(function (data) {
+//       console.log(data)
+//       res.json(data)
+//     })
+//   })
+// }
 

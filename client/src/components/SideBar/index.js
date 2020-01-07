@@ -40,6 +40,12 @@ function SideBar(props) {
               <textarea className="form-control" id="post-description" aria-describedby="post-description"
                 placeholder="*Feelings*"></textarea>
             </div>
+
+            <div>
+              <button onClick = {props.OnClick}>
+                Submit
+              </button>
+            </div>
           </div>
 
         </Col>
