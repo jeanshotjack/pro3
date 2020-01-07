@@ -6,6 +6,7 @@ import SideBar from "../components/SideBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/Footer";
 import mock_posts from "../mock_posts.json";
+import axios from "axios";
 
 
 class Main extends Component {
@@ -45,6 +46,8 @@ class Main extends Component {
       )
       .catch(err => console.log(err));
   };
+
+  
 
   render() {
     return (
