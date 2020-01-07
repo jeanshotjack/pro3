@@ -10,7 +10,9 @@ import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
   state = {
-    // User,
+    username: "(username)",
+    pronouns: "",
+    social: "",
     mock_posts,
     flag: false,
     error: "",
