@@ -1,5 +1,5 @@
 const db = require("../Models");
-const sessionstorage = require("sessionstorage");
+// const sessionstorage = require("sessionstorage");
 
 // Defining methods for the booksController
 module.exports = {
@@ -46,17 +46,17 @@ module.exports = {
         
       })
   },
-  session: function(req, res) {
-    if (sessionstorage.getItem("user")) {
-      res.render("index", {
-        user: sessionstorage.getItem("user")
-      });
-      console.log("success");
-      // res.json(sessionstorage.getItem("user"));
-    } else {
-      res.redirect("/login");
-    }
-  }
+  // session: function(req, res) {
+  //   if (sessionstorage.getItem("user")) {
+  //     res.render("index", {
+  //       user: sessionstorage.getItem("user")
+  //     });
+  //     console.log("success");
+  //     // res.json(sessionstorage.getItem("user"));
+  //   } else {
+  //     res.render("/login");
+  //   }
+  // }
 }
 
 
