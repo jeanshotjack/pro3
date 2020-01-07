@@ -43,7 +43,7 @@ function SideBar(props) {
 
 
           <p className="font-main">
-            Hello! (Tom){props.username}
+            Hello! {props.username}
           </p>
           {/* <p className="font-main">
             Profile: {props.userprofile}
