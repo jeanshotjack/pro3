@@ -10,24 +10,21 @@ function SideBar(props) {
     <ListItem>
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
-          <p className="font-main">
+          <p>
             Hello! {props.username}
           </p>
-          {/* <p className="font-main">
-            Profile: {props.profile}
-          </p> */}
-          <p className="font-main">
+          <p >
             Pronouns: {props.pronouns}
           </p>
-          <p className="font-main">
+          <p >
             User Name: {props.username}
           </p>
-          <p className="font-main">
+          <p >
             Social Media: {props.social}
           </p>
           
           <div className="form-group">
-            <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
+            <label for="post-text">New Post</label>
             <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
           </div>
 
@@ -36,6 +33,7 @@ function SideBar(props) {
             <textarea className="form-control" id="post-description" aria-describedby="post-description"
               placeholder="*Feelings*"></textarea>
           </div>
+          <SubmitPost></SubmitPost>
         </Col>
       </Row>
     </ListItem >
