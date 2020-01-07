@@ -14,6 +14,15 @@ function NavBar(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <a href="/"><img className="noxNav" href="/home" src={require("../Nav/noxNavbar.png")} /></a>   
+        <div>
+        <Button href="/login" className="primary login">Login</Button>
+        {"  "}
+        <Button href="/signup" className="primary signup">Sign Up</Button>
+        {"  "}
+        <Button href="/chat" className="primary chat">Chat</Button>
+        {"  "}
+        <Button href="/logout" className="primary logout">Logout</Button>
+      </div>
         </Navbar.Collapse>
       </Navbar>
 
@@ -21,16 +30,11 @@ function NavBar(props) {
         <div className="container-fluid">
           <div className="row justify-content-center">
             <img className="noxLogo" src={require("../NoxLogo/noxLogo.png")} />
-            
           </div>
         </div>
       </div>
 
-      {/* <div>
-        <Button href="/login" className="primary login">Login</Button>
-        {"  "}
-        <Button href="/signup" className="primary signup">Sign Up</Button>
-      </div> */}
+      
 
       {/* <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
