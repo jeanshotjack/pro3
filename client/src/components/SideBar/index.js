@@ -10,7 +10,7 @@ function SideBar(props) {
     <ListItem>
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
-          
+
           <div class="sidenav">
             <p className="font-main">
               Hello! (Tom){props.userName}
@@ -42,7 +42,6 @@ function SideBar(props) {
           </div>
 
 
-=======
           <p className="font-main">
             Hello! (Tom){props.username}
           </p>
@@ -58,21 +57,19 @@ function SideBar(props) {
           <p className="font-main">
             Social Media: {props.social}
           </p>
-        <div className="form-group">
-          <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
-          <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
-        </div>
+          <div className="form-group">
+            <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
+            <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
+          </div>
 
-        <div className="form-group">
-          <label for="post-description">Post</label>
-          <textarea className="form-control" id="post-description" aria-describedby="post-description"
-            placeholder="*Feelings*"></textarea>
-        </div>
-          
->>>>>>> eae7de7393f6d29deea30ab2b6adf21cda579c4f
+          <div className="form-group">
+            <label for="post-description">Post</label>
+            <textarea className="form-control" id="post-description" aria-describedby="post-description"
+              placeholder="*Feelings*"></textarea>
+          </div>
         </Col>
       </Row>
-    </ListItem>
+    </ListItem >
   );
 }
 
