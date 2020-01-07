@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { MDBSideNavCat, MDBSideNavNav, MDBSideNav, MDBSideNavLink, MDBContainer, MDBIcon, MDBBtn } from "mdbreact";
 
-class SideNavPage extends Component {
+class testIndex extends Component {
   state = {
     sideNavLeft: false,
   }
@@ -59,4 +59,4 @@ render() {
   }
 }
 
-export default SideNavPage;
+export default testIndex;
