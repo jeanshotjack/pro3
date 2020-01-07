@@ -10,20 +10,26 @@ import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
   state = {
+    // User,
     mock_posts,
     flag: false,
     error: "",
   };
 
   componentDidMount() {
+    this.getUser();
     this.getPosts();
   }
 
+  getUser = id => {
+    API.getUser()
+      .then(res => this.setState({ User: res.data }))
+      .catch(err => console.log(err));
+  };
+
   getPosts = () => {
     API.getPosts()
-      .then(res =>
-        this.setState({ Post: res.data })
-      )
+      .then(res => this.setState({ Post: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -43,7 +49,11 @@ class Main extends Component {
       <Container fluid>
         <Row>
           <Col size="md-2">
-            <SideBar />
+            <SideBar 
+            username={this.state.username}
+            pronouns={this.state.pronouns}
+            social={this.state.social}
+            />
           </Col>
           <Col size="md-10">
             {this.state.mock_posts.map((obj, index) => {
