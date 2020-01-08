@@ -17,7 +17,7 @@ function NavBar(props) {
 
         <Navbar.Collapse>
 
-          <NavDropdown className="dropDown secondary"
+          {/* <NavDropdown className="dropDown secondary"
             eventKey={3}
             title="Menu"
           >
@@ -32,7 +32,7 @@ function NavBar(props) {
 
             <Button href="/logout" className="dropdown-item btn-primary logout">Logout</Button>
 
-          </NavDropdown>
+          </NavDropdown> */}
 
         </Navbar.Collapse>
       </Navbar>
