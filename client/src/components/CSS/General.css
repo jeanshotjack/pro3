@@ -32,14 +32,24 @@ body {
     height: 55px;
   }
 
-  .dropDown {
-    margin: 70%;
-    height: 70px;
+  .dropMenu {
+    margin: 50px;
+    height: 5%;
+    width: 5rem;
   }
   
   .noxLogo {
     margin: 25rem;
     width: 30%;
+    left: 0;
+  }
+
+  .noxRulesLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin: 10rem;
   }
 
   .noxNav {
