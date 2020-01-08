@@ -24,8 +24,8 @@ handlePasswordInput = (event) => {
      }
 handleLogin = (event) => {
     event.preventDefault();
-    API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email })
-        .then(API.sessions({username: this.state.username, password:this.state.password})
+    API.loginUser({ username: this.state.username, password: this.state.password})
+        .then(API.sessions(res.redirect("/"))
         .then(console.log("In session function")))
     
 }

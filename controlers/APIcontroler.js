@@ -1,5 +1,6 @@
 const db = require("../Models");
 const session = require('express-session')
+const crypto = require('crypto');
 
 // Defining methods for the booksController
 module.exports = {
@@ -38,6 +39,7 @@ module.exports = {
         }
         else if (existingUser) {
           console.log(userInfo)
+          req.session = existingUser
           console.log("user exists so log in")
         }
         else{
@@ -46,19 +48,18 @@ module.exports = {
         
       })
   },
-  session: function(req, res) {
-      if (req.session.views) {
-        req.session.views++
-        res.setHeader('Content-Type', 'text/html')
-        res.write('<p>views: ' + req.session.views + '</p>')
-        res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
-        res.end()
-      } else {
-        req.session.views = 1
-        res.end('welcome to the session demo. refresh!')
-      }
+
+      // if (req.session.views) {
+      //   req.session.views++
+      //   res.setHeader('Content-Type', 'text/html')
+      //   res.write('<p>views: ' + req.session.views + '</p>')
+      //   res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+      //   res.end()
+      // } else {
+      //   req.session.views = 1
+      //   res.end('welcome to the session demo. refresh!')
+      // }
   }
-}
 
 
 

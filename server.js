@@ -19,16 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.session({
-  secret: 'JumpJumpJumpJumpAround',
+  secret: 'Senzu Bean',
   cookie: { maxAge: 2628000000 },
   store: new (require('express-sessions'))({
       storage: 'mongodb',
-      instance: mongoose, // optional
-      host: 'localhost', // optional
-      port: 27017, // optional
-      db: 'userdb', // optional
-      collection: 'sessions', // optional
-      expire: 86400 // optional
+      instance: mongoose,
+      host: 'localhost', 
+      port: 27017,
+      db: 'userdb', 
+      collection: 'sessions', 
+      expire: 86400 
   })
 }));
 
