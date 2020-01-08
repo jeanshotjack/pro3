@@ -1,17 +1,26 @@
 body {
     background: linear-gradient(70deg, #df7af3, #f7f7f7);
     color: #514B64;
-    min-height: 120vh;
+    min-height: 100vh;
 
   }
 
-  .card {
+  .signUpCard {
     background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
     padding: 5rem;
-    margin: 3rem;
+    margin: 10rem;
     border-radius: 1rem;
     font-family: Optima, Sans-serif;
     box-shadow: 5px 5px 40px blue;    
+  }
+
+  .loginCard {
+    background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
+    padding: 5rem;
+    margin: 15rem;
+    border-radius: 1rem;
+    font-family: Optima, Sans-serif;
+    box-shadow: 5px 5px 40px blue;
   }
 
   .sideFont {
@@ -29,8 +38,7 @@ body {
   }
   
   .noxLogo {
-    margin: 25rem;
-    height: 30%;
+    margin: 8rem;
     width: 30%;
   }
 
@@ -65,10 +73,12 @@ body {
     font-size: 15px;
     
   }
+
   .login {
     font-size: 15px;
     
   }
+
   .signup {
     font-size: 15px;
     

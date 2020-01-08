@@ -39,10 +39,12 @@ class PostForm extends React.Component {
                 <Row className="flex-wrap-reverse">
                     <Col size="md-8">
 
-                        <div class="container-fluid sidenav">
+
+                        <div className="container-fluid sidenav">
 
                             <img className="profoimg" src={require("../PostForm/profileSidebar.png")} />
-                            <hr />                           
+                            <hr />
+         {/* can we please change this font */}
                             <p className="sideFont">
                                 Hello! {this.props.username}
                             </p>

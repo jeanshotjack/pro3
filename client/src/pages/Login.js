@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import LoginPage from "./LoginPage";
+import LoginPage from "../components/LoginPage/LoginPage";
 import API from "../utils/API";
 import {Redirect} from 'react-router-dom'
 

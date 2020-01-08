@@ -37,13 +37,6 @@ function NavBar(props) {
         </Navbar.Collapse>
       </Navbar>
 
-      <div>
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-            <img className="noxLogo" src={require("../NoxLogo/Nox2.png")} />
-          </div>
-        </div>
-      </div>
 
 
 
