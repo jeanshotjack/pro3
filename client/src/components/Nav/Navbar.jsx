@@ -16,6 +16,13 @@ function NavBar(props) {
 
         <Navbar.Collapse id="basic-navbar-nav">
 
+<<<<<<< HEAD
+=======
+          {/* <NavDropdown className="dropDown secondary"
+            eventKey={3}
+            title="Menu"
+          >
+>>>>>>> 64f16a9da58f18e229f9d5142e6f582b16f93482
 
           <Dropdown className="dropMenu ml-auto">
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
@@ -30,7 +37,11 @@ function NavBar(props) {
 
               <Button href="/signup" className="dropdown-item btn-primary signup">Sign Up</Button>
 
+<<<<<<< HEAD
               <Button href="/chat" className="dropdown-item btn-primary chat">Chat</Button>
+=======
+          </NavDropdown> */}
+>>>>>>> 64f16a9da58f18e229f9d5142e6f582b16f93482
 
               <Button href="/logout" className="dropdown-item btn-primary logout">Logout</Button>
 
