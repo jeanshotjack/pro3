@@ -1,5 +1,6 @@
 const db = require("../Models");
-// const sessionstorage = require("sessionstorage");
+// const session = require('express-session')
+const crypto = require('crypto');
 
 // Defining methods for the booksController
 module.exports = {
@@ -32,13 +33,24 @@ module.exports = {
     console.log(userInfo)
     console.log("got to Login User")
     db.User
-      .findOne({ username: userInfo.username } && { password: userInfo.password }, (err, existingUser) => {
+      .findOne({ username: userInfo.username }, (err, existingUser) => {
         if (err){
           console.log("error in get" + err)
         }
         else if (existingUser) {
-          console.log(userInfo)
-          console.log("user exists so log in")
+
+          console.log("this is existing user", existingUser)
+          console.log(req.session)
+          if(userInfo.password === existingUser.password){
+  
+            req.session.user = existingUser
+            console.log("user exists so log in")
+            res.send(existingUser)
+            
+          }
+          else{
+            console.log("password doesnt match username")
+          }
         }
         else{
           console.log("no user exists")
@@ -46,18 +58,32 @@ module.exports = {
         
       })
   },
-  // session: function(req, res) {
-  //   if (sessionstorage.getItem("user")) {
-  //     res.render("index", {
-  //       user: sessionstorage.getItem("user")
-  //     });
-  //     console.log("success");
-  //     // res.json(sessionstorage.getItem("user"));
-  //   } else {
-  //     res.render("/login");
-  //   }
-  // }
-}
+  findOne: function(req,res){
+    if (req.session){
+      res.json({user: req.session.user})
+    }
+    else{
+      console.log("no session found")
+    }
+  },
+  logout: function(req,res){
+    req.session.destroy()
+    console.log("logged out")
+    res.end()
+  }
+
+      // if (req.session.views) {
+      //   req.session.views++
+      //   res.setHeader('Content-Type', 'text/html')
+      //   res.write('<p>views: ' + req.session.views + '</p>')
+      //   res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+      //   res.end()
+      // } else {
+      //   req.session.views = 1
+      //   res.end('welcome to the session demo. refresh!')
+      // }
+  }
+
 
 
 

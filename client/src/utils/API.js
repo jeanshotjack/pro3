@@ -19,7 +19,7 @@ export default {
     return axios.post("/api/posts", post);
   },
   getUser: function(id) {
-    return axios.get("/api/users" + id);
+    return axios.get("/api/user");
   },
   deleteUser: function(id) {
     return axios.delete("/api/users" + id);
@@ -29,5 +29,8 @@ export default {
   },
   loginUser: function(user){
     return axios.post("/api/login", user)
+  },
+  sessions: function(user){
+    return axios.get("/", user)
   }
   }
