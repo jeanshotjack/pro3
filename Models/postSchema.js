@@ -7,29 +7,32 @@ const PostSchema = new Schema({
   title: {
       type: String,
       trim: true,
-      required: "title is required"
+      // required: "title is required"
     },
   body: {
     type: String,
     trim: true,
-    required: "body is required",
-    validate: [
-      function(input) {
-        return input.length <= 200;
-      },
-      "Body can't be longer than 200 characters"
-    ]
+    // required: "body is required",
+    // validate: [
+    //   function(input) {
+    //     return input.length <= 200;
+    //   },
+    //   "Body can't be longer than 200 characters"
+    // ]
   },
   postCreated: {
     type: Date,
     default: Date.now
   },
-  user: [
-    {
-       type: mongoose.Schema.Types.ObjectId,
-       ref: 'User'
-    }
- ]
+  user: {
+    type: String
+  }
+//   user: [
+//     {
+//        type: Schema.Types.ObjectId,
+//        ref: 'User'
+//     }
+//  ]
 });
  
 // PostSchema.belongsTo("User");
