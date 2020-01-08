@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const session = require("express-session")
 const PORT = process.env.PORT || 3001;
 
 require('dotenv').config({ path: '.env' });
@@ -18,19 +19,15 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.session({
+var sess = {
   secret: 'Senzu Bean',
-  cookie: { maxAge: 2628000000 },
-  store: new (require('express-sessions'))({
-      storage: 'mongodb',
-      instance: mongoose,
-      host: 'localhost', 
-      port: 27017,
-      db: 'userdb', 
-      collection: 'sessions', 
-      expire: 86400 
-  })
-}));
+  // store: new MongoStore({ mongooseConnection: dbConnection }),
+  resave: false, //required
+  saveUninitialized: false //required
+}
+ 
+ 
+app.use(session(sess))
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

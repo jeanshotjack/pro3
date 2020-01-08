@@ -1,5 +1,5 @@
 const db = require("../Models");
-const session = require('express-session')
+// const session = require('express-session')
 const crypto = require('crypto');
 
 // Defining methods for the booksController
@@ -33,14 +33,24 @@ module.exports = {
     console.log(userInfo)
     console.log("got to Login User")
     db.User
-      .findOne({ username: userInfo.username } && { password: userInfo.password }, (err, existingUser) => {
+      .findOne({ username: userInfo.username }, (err, existingUser) => {
         if (err){
           console.log("error in get" + err)
         }
         else if (existingUser) {
-          console.log(userInfo)
-          req.session = existingUser
-          console.log("user exists so log in")
+
+          console.log("this is existing user", existingUser)
+          console.log(req.session)
+          if(userInfo.password === existingUser.password){
+  
+            req.session.user = existingUser
+            console.log("user exists so log in")
+            res.send(existingUser)
+            
+          }
+          else{
+            console.log("password doesnt match username")
+          }
         }
         else{
           console.log("no user exists")
@@ -48,6 +58,19 @@ module.exports = {
         
       })
   },
+  findOne: function(req,res){
+    if (req.session){
+      res.json({user: req.session.user})
+    }
+    else{
+      console.log("no session found")
+    }
+  },
+  logout: function(req,res){
+    req.session.destroy()
+    console.log("logged out")
+    res.end()
+  }
 
       // if (req.session.views) {
       //   req.session.views++
@@ -60,6 +83,7 @@ module.exports = {
       //   res.end('welcome to the session demo. refresh!')
       // }
   }
+
 
 
 

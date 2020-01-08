@@ -55,10 +55,10 @@ class SignUp extends Component {
         console.log("Click")
         if (!this.state.username ||
             !this.state.password ||
-            !this.state.confirm ||
-            !this.state.email ||
-            !this.state.gender||
-            !this.state.DOB
+            !this.state.confirm
+            // !this.state.email ||
+            // !this.state.gender||
+            // !this.state.DOB
             ) {
             console.log("Please Fill in all things")
         }
