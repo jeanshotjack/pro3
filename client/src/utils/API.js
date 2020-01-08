@@ -2,7 +2,7 @@ import axios from "axios";
 // import db from "../../Models/accountSchema"
 export default {
   
-  // Gets all books
+  // Gets all posts
   getPosts: function() {
     return axios.get("/api/posts");
   },
@@ -14,6 +14,7 @@ export default {
   deletePost: function(id) {
     return axios.delete("/api/posts/" + id);
   },
+  
   // Saves a book to the database
   savePost: function(post) {
     return axios.post("/api/posts", post);
@@ -30,7 +31,7 @@ export default {
   loginUser: function(user){
     return axios.post("/api/login", user)
   },
-  sessions: function(user){
-    return axios.get("/", user)
-  }
+  // sessions: function(user){
+  //   return axios.get("/", user)
+  // }
   }

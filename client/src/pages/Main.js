@@ -5,12 +5,14 @@ import AllPosts from "../components/AllPosts";
 import PostForm from "../components/PostForm";
 
 import API from "../utils/API";
+
 import {Redirect} from 'react-router-dom'
+
 // import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
   state = {
-    username: "(username)",
+    username: "",
     pronouns: "",
     social: "",
     mock_posts: [],
@@ -27,6 +29,7 @@ class Main extends Component {
 
   getUser = () => {
     API.getUser()
+
       .then(res => {console.log("get user").
         then(response => {
         console.log("login response");
@@ -34,6 +37,7 @@ class Main extends Component {
       
     this.setState({ User: res.data })
     console.log(res)})
+
       .catch(err => console.log(err));
 
       if (res.status === 200) { 
@@ -63,21 +67,24 @@ class Main extends Component {
       )
       .catch(err => console.log(err));
   };
+
 //   renderLogin = () => {
 //     if(data.user){
 // console.log("logged in")
 //     }
 //   };
 
+
   render() {
     return (
       <Container fluid>
         <Row>
+
           <Col size="md-2">
-            <PostForm 
-            username={this.state.username}
-            pronouns={this.state.pronouns}
-            social={this.state.social}
+            <PostForm
+              username={this.state.username}
+              pronouns={this.state.pronouns}
+              social={this.state.social}
             />
           </Col>
           <Col size="md-10">
@@ -92,7 +99,6 @@ class Main extends Component {
                 index={index}
                 handleFlagPost={this.handleFlagPost}
               />
-
             })}
           </Col>
         </Row>
