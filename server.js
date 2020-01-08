@@ -25,8 +25,8 @@ var sess = {
   resave: false, //required
   saveUninitialized: false //required
 }
- 
- 
+
+
 app.use(session(sess))
 
 if (process.env.NODE_ENV === "production") {
