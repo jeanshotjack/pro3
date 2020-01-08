@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(70deg, #df7af3, #f7f7f7);
     color: #514B64;
-    min-height: 100vh;
+    min-height: 120vh;
 
   }
 
@@ -11,8 +11,7 @@ body {
     margin: 3rem;
     border-radius: 1rem;
     font-family: Optima, Sans-serif;
-    box-shadow: 5px 5px 40px blue;
-    
+    box-shadow: 5px 5px 40px blue;    
   }
 
   .sideFont {
@@ -25,11 +24,10 @@ body {
   }
 
   .dropDown {
-    margin: 80%;
+    margin: 70%;
     height: 70px;
   }
   
-
   .noxLogo {
     margin: 25rem;
     height: 30%;
@@ -80,12 +78,12 @@ body {
     
   }
   .sidenav {
-    height: 90%;
+    height: 90.4%;
     width: 250px;
     position: fixed;
-    top: 60px;
-    left: .1%;
-    padding-top: 20px;
+    top: 59px;
+    left: .2%;
+    padding-top: 5px;
     background: rgb(255, 255, 255);
     border-style: solid;
     text-align: center;
