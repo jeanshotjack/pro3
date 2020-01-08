@@ -28,7 +28,7 @@ class Main extends Component {
       .then(res => {
         console.log("get user")
         this.setState({ User: res.data })
-        console.log(res.data.user.username)
+        console.log(res.data.User.username)
       })
       .catch(err => console.log(err));
   };
