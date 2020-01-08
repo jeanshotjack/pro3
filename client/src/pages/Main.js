@@ -29,26 +29,23 @@ class Main extends Component {
 
   getUser = () => {
     API.getUser()
+    .then(res => {console.log("get user")
 
-      .then(res => {console.log("get user").
-        then(response => {
-        console.log("login response");
-        console.log(response);
       
     this.setState({ User: res.data })
     console.log(res)})
 
       .catch(err => console.log(err));
 
-      if (res.status === 200) { 
-        this.props.updateUser({
-          loggedIn: true,
-          username: res.data.username
-        });
-        this.setState({
-          redirectTo: "/home"
-        });
-      }
+  //     if (res.status === 200) { 
+  //       this.props.updateUser({
+  //         loggedIn: true,
+  //         username: res.data.username
+  //       });
+  //       this.setState({
+  //         redirectTo: "/home"
+  //       });
+        
   };
 
   getPosts = () => {
