@@ -5,6 +5,9 @@ import AllPosts from "../components/AllPosts";
 import PostForm from "../components/PostForm";
 
 import API from "../utils/API";
+
+import {Redirect} from 'react-router-dom'
+
 // import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
@@ -15,6 +18,7 @@ class Main extends Component {
     mock_posts: [],
     flag: false,
     error: "",
+    redirect: null
   };
 
   componentDidMount() {
@@ -25,12 +29,26 @@ class Main extends Component {
 
   getUser = () => {
     API.getUser()
-      .then(res => {
-        console.log("get user")
-        this.setState({ User: res.data })
-        console.log(res.data.user.username)
-      })
+
+      .then(res => {console.log("get user").
+        then(response => {
+        console.log("login response");
+        console.log(response);
+      
+    this.setState({ User: res.data })
+    console.log(res)})
+
       .catch(err => console.log(err));
+
+      if (res.status === 200) { 
+        this.props.updateUser({
+          loggedIn: true,
+          username: res.data.username
+        });
+        this.setState({
+          redirectTo: "/home"
+        });
+      }
   };
 
   getPosts = () => {
@@ -50,6 +68,11 @@ class Main extends Component {
       .catch(err => console.log(err));
   };
 
+//   renderLogin = () => {
+//     if(data.user){
+// console.log("logged in")
+//     }
+//   };
 
 
   render() {

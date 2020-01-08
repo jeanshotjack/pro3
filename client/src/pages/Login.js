@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import LoginPage from "./LoginPage";
 import API from "../utils/API";
 import {Redirect} from 'react-router-dom'
+import Main from "./Main"
 
 class Login extends Component {
     // eslint-disable-next-line no-useless-constructor
@@ -34,22 +35,15 @@ handleLogin = (event) => {
                 this.setState({redirect:true})
             }
     )
-    
 }
-renderRedirect = () => {
-    if (this.state.redirect){
-        return <Redirect to = '/'/>
-
-        
-    }
-}
-
-
 render() {
     return (
         <div>
-            {this.renderRedirect()}
-            <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} OnClick ={this.handleLogin}/>
+            {/* {this.renderRedirect()} */}
+            <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} OnClick ={this.handleLogin}
+            />
+
+        
         </div>
     )
 }
