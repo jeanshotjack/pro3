@@ -21,7 +21,8 @@ router.route("/api/user")
 
 router.route("/api/posts")
   .get(postsControler.findAll)
-  // .post(postsControler.create)
+  .post(postsControler.create)
+  
 router.route("/logout")
 .get(apiController.logout)
 
