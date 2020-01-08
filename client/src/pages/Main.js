@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
-import SideBar from "../components/SideBar";
+import PostForm from "../components/PostForm";
+
 import API from "../utils/API";
 import Footer from "../components/Footer/Footer";
 // import mock_posts from "../mock_posts.json";
@@ -45,12 +46,14 @@ class Main extends Component {
       .catch(err => console.log(err));
   };
 
+  
+
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-2">
-            <SideBar 
+            <PostForm 
             username={this.state.username}
             pronouns={this.state.pronouns}
             social={this.state.social}
