@@ -4,12 +4,12 @@ const Signup = (props) => {
   return (
 
 
-    <div className="container">
+    <div className="container-fluid">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="card">
-            <div className="card-header" align="center">Sign Up</div>
-            <div className="card-body"></div>
+          <div className="signUpCard">
+            <div className="header" align="center"><h3>Sign Up</h3></div>
+            <div className="box"></div>
 
             <form onSubmit>
               <div className="form-row">
