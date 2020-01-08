@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import LoginPage from "./LoginPage";
 import API from "../utils/API";
+import {Redirect} from 'react-router-dom'
+
 class Login extends Component {
     // eslint-disable-next-line no-useless-constructor
     constructor(props) {
@@ -8,6 +10,8 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
+            isAuthenticated: false,
+            redirect:false
         }
     }
 handleUserInput = (event) => {
@@ -22,13 +26,29 @@ handlePasswordInput = (event) => {
      }
 handleLogin = (event) => {
     event.preventDefault();
-    console.log("clicked")
-    API.loginUser({ username: this.state.username, password: this.state.password, email: this.state.email }).then(console.log("account logged in"))
+    API.loginUser({ username: this.state.username, password: this.state.password})
+        .then(res =>
+            {
+                API.sessions(console.log("login"))
+                console.log(res);
+                this.setState({redirect:true})
+            }
+    )
+    
 }
+renderRedirect = () => {
+    if (this.state.redirect){
+        return <Redirect to = '/'/>
+
+        
+    }
+}
+
 
 render() {
     return (
         <div>
+            {this.renderRedirect()}
             <LoginPage handleUserInput={this.handleUserInput} handlePasswordInput={this.handlePasswordInput} OnClick ={this.handleLogin}/>
         </div>
     )
