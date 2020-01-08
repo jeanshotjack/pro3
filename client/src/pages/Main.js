@@ -68,7 +68,7 @@ class Main extends Component {
             {this.state.mock_posts.reverse().map((obj, index) => {
               return <AllPosts
                 title={obj.title}
-                User={obj.User}
+                User={obj.user_id}
                 postCreated={obj.postCreated}
                 body={obj.body}
 

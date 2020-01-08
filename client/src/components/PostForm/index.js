@@ -17,6 +17,7 @@ class PostForm extends React.Component {
         this.state = {
             postTitle: "",
             postBody: "",
+            
         }
     }
     

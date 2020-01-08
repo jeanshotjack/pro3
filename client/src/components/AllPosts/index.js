@@ -22,7 +22,11 @@ function AllPosts(props) {
         </Col>
       </Row>
       <Row>
-        
+        <Col size="md-6">
+          <p className="font-italic small">
+            User: {props.userId}
+          </p>
+        </Col>
         <Col size="md-6">
           <p className="font-italic small">
             Published: {props.postCreated}

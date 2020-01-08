@@ -23,10 +23,16 @@ const PostSchema = new Schema({
   postCreated: {
     type: Date,
     default: Date.now
-  }
+  },
+  user: [
+    {
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'User'
+    }
+ ]
 });
-
-PostSchema.belongsTo("User");
+ 
+// PostSchema.belongsTo("User");
 
 var Post = mongoose.model("Post", PostSchema);
 module.exports = Post;
