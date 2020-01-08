@@ -24,7 +24,7 @@ class PostForm extends React.Component {
         event.preventDefault();
         this.setState({ postBody: event.target.value })
     }
-    handleSubmit = (event) => {
+    handleSubmit(event) {
         event.preventDefault();
 
         console.log("Submitted!")
@@ -39,34 +39,38 @@ class PostForm extends React.Component {
                 <Row className="flex-wrap-reverse">
                     <Col size="md-8">
 
-                        <div class="sidenav">
-                            {/* can we please change this font */}
-                            <p className="font-main">
+
+                        <div className="container-fluid sidenav">
+
+                            <img className="profoimg" src={require("../PostForm/profileSidebar.png")} />
+                            <hr />
+         {/* can we please change this font */}
+                            <p className="sideFont">
                                 Hello! {this.props.username}
                             </p>
 
-                            <p className="font-main">
+                            <p className="sideFont">
                                 Pronouns: {this.props.pronouns}
                             </p>
-                            <p className="font-main">
+                            <p className="sideFont">
                                 User Name: {this.props.username}
                             </p>
-                            <p className="font-main">
+                            <p className="sideFont">
                                 Social Media: {this.props.social}
                             </p>
 
-                                 <div className="form-group">
-                              <label htmlFor="title">Post Title</label>
+                            <div className="form-group">
+                                <label htmlFor="title">Post Title</label>
                                 <input id="title" onChange={this.handleTitleInput} name="title" type="text" />
 
-                                 <label htmlFor="body">Post Body</label>
+                                <label htmlFor="body">Post Body</label>
                                 <input id="body" onChange={this.handleBodyInput} name="body" type="text" />
 
 
-                                <button onClick={() => this.handleSubmit()}>Submit</button>
+                                <button type="submit" onClick={this.handleSubmit}>Submit</button>
 
-                                 </div> 
-                            
+                            </div>
+
 
                         </div>
 

@@ -1,13 +1,14 @@
 import React from "react";
 
+
 function Login(props) {
   return (
-    <div className="container">
+    <div className="inner-container">
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card">
-            <div className="card-header" align="center">Login</div>
-            <div className="card-body"></div>
+            <div className="header" align="center"><h3>Login</h3></div>
+            <div className="box"></div>
             <form>
 
               <div class="form-row">
@@ -20,7 +21,7 @@ function Login(props) {
               </div>
 
               <div className="form-group">
-                <div className="col">
+                <div className="col" align="center">
                   <button onClick = {props.OnClick}> Submit </button>
                 </div>
               </div>

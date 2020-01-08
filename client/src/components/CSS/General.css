@@ -2,6 +2,7 @@ body {
     background: linear-gradient(70deg, #df7af3, #f7f7f7);
     color: #514B64;
     min-height: 100vh;
+
   }
 
   .card {
@@ -9,21 +10,33 @@ body {
     padding: 5rem;
     margin: 3rem;
     border-radius: 1rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Optima, Sans-serif;
     box-shadow: 5px 5px 40px blue;
     
   }
 
-  .noxLogo {
-    display: block;
-    margin: 10rem;
-    width: 30%;
-    box-shadow: 5px 5px 40px rgb(0, 0, 0);
+  .sideFont {
+    font-family: Optima, Sans-serif;
+  }
 
+  .navbar {
+    background: linear-gradient(70deg, rgb(137, 255, 255) , rgb(255, 255, 255));
+    height: 55px;
+  }
+
+  .dropDown {
+    margin: 80%;
+    height: 70px;
+  }
+  
+
+  .noxLogo {
+    margin: 25rem;
+    height: 30%;
+    width: 30%;
   }
 
   .noxNav {
-    border-radius: 10px;
     height: 25%;
     width: 25%;
   }
@@ -36,19 +49,18 @@ body {
     color: rgb(255, 255, 255);
   }
   
-  .profileLogo {
-    height: 50%;
+  .profoimg {
+    height: 20%;
     width: 50%;
-    border-radius: 35%;
+    border-radius: 50%;
   }
 
   .footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 60px;
+    height: 52px;
     width: 100%;
-    /* overflow: hidden; */
   }
 
   .logout {
@@ -68,17 +80,19 @@ body {
     
   }
   .sidenav {
-    height: 100%;
-    width: 160px;
+    height: 90%;
+    width: 250px;
     position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 100px;
-    background: rgb(143, 204, 240);
+    top: 60px;
+    left: .1%;
+    padding-top: 20px;
+    background: rgb(255, 255, 255);
+    border-style: solid;
+    text-align: center;
   }
+  
 
+  
   
   
 

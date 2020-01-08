@@ -5,7 +5,6 @@ import AllPosts from "../components/AllPosts";
 import PostForm from "../components/PostForm";
 
 import API from "../utils/API";
-import Footer from "../components/Footer/Footer";
 // import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
@@ -55,6 +54,7 @@ class Main extends Component {
     return (
       <Container fluid>
         <Row>
+          
           <Col size="md-2">
             <PostForm 
             username={this.state.username}
@@ -74,7 +74,6 @@ class Main extends Component {
                 index={index}
                 handleFlagPost={this.handleFlagPost}
               />
-
             })}
           </Col>
         </Row>
