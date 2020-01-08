@@ -5,7 +5,6 @@ import {  } from "../Grid";
 function Footer (props) {
     
     return (
-
         <div>
             <Footer>
                 <div className="containter">

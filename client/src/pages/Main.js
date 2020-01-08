@@ -2,16 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
-import PostForm from "../components/SideBar/index";
-import SideBar from "../components/SideBar/sidebar";
+import PostForm from "../components/PostForm";
+
 import API from "../utils/API";
 import Footer from "../components/Footer/Footer";
-<<<<<<< HEAD
-import mock_posts from "../mock_posts.json";
-import axios from "axios";
-=======
 // import mock_posts from "../mock_posts.json";
->>>>>>> 055757c558cd9dd1645ae23e374e7e12cba58684
 
 class Main extends Component {
   state = {
@@ -58,7 +53,7 @@ class Main extends Component {
       <Container fluid>
         <Row>
           <Col size="md-2">
-            <SideBar 
+            <PostForm 
             username={this.state.username}
             pronouns={this.state.pronouns}
             social={this.state.social}
