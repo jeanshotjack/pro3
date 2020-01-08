@@ -36,6 +36,8 @@
     "mongoose-association": "0.0.39",
     "morgan": "^1.9.1",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
     "react-image-and-background-image-fade": "^1.0.4",
     "react-native": "^0.61.5",

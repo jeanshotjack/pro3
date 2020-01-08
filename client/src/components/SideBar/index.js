@@ -14,13 +14,10 @@ function SideBar(props) {
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
 
-          <div class="sidenav">
+          <div className="container-fluid fixed sidenav">
             <p className="font-main">
               Hello! {props.username}
             </p>
-            {/* <p className="font-main">
-            Profile: {props.userprofile}
-          </p> */}
             <p className="font-main">
               Pronouns: {props.pronouns}
             </p>
@@ -31,23 +28,22 @@ function SideBar(props) {
               Social Media: {props.social}
             </p>
             <div className="form-group">
-              <label for="post-text"><h4 className="bolder-text">New Post</h4></label>
+              <label for="post-text"><h4 className="font-main">New Post</h4></label>
               <input type="text" id="post-text" className="form-control" aria-describedby="post-text" placeholder="*Title*" />
             </div>
 
-            <div className="form-group">
+            <div className="font-main">
               <label for="post-description">Post</label>
               <textarea className="form-control" id="post-description" aria-describedby="post-description"
                 placeholder="*Feelings*"></textarea>
             </div>
 
             <div>
-              <button onClick = {props.OnClick}>
+              <button className="font-main" onClick = {props.OnClick}>
                 Submit
               </button>
             </div>
           </div>
-
         </Col>
       </Row>
     </ListItem>
