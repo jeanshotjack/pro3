@@ -27,15 +27,19 @@ class Main extends Component {
     API.getUser()
       .then(res => {
         console.log("get user")
-        this.setState({ User: res.data })
-        console.log(res.data.User.username)
+        this.setState({ User: res.data, 
+        username: res.data.user.username,
+        pronouns: res.data.user.pronouns,
+        social: res.data.user.social })
+        console.log(res)
       })
       .catch(err => console.log(err));
   };
 
   getPosts = () => {
     API.getPosts()
-      .then(res => this.setState({ mock_posts: res.data }))
+      .then(res => 
+        this.setState({ mock_posts: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -55,6 +59,14 @@ class Main extends Component {
   render() {
     return (
       <Container fluid>
+
+        <div>
+          <div className="container-fluid">
+            <div className="row justify-content-center">
+              <img className="noxLogo" src={require("../../src/components/NoxLogo/Nox2.png")} />
+            </div>
+          </div>
+        </div>
         <Row>
 
           <Col size="md-2">
@@ -67,8 +79,9 @@ class Main extends Component {
           <Col size="md-10">
             {this.state.mock_posts.reverse().map((obj, index) => {
               return <AllPosts
+            
                 title={obj.title}
-                User={obj.User}
+                user={obj.user}
                 postCreated={obj.postCreated}
                 body={obj.body}
 

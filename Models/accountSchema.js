@@ -28,9 +28,15 @@ const UserSchema = new Schema({
   },
   social: {
     type: String
-  }
+  },
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post"
+    }
+  ]
 });
 
-UserSchema.hasMany("Post");
+// UserSchema.hasMany("Post");
 var User = mongoose.model("User", UserSchema);
 module.exports = User;
