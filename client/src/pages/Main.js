@@ -19,13 +19,16 @@ class Main extends Component {
   };
 
   componentDidMount() {
+    console.log("loaded")
     this.getUser();
     this.getPosts();
   }
 
-  getUser = id => {
+  getUser = () => {
     API.getUser()
-      .then(res => this.setState({ User: res.data }))
+      .then(res => {console.log("get user")
+        this.setState({ User: res.data })
+    console.log(res)})
       .catch(err => console.log(err));
   };
 

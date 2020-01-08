@@ -42,6 +42,24 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
+                  <input type="text" value ={props.gender} onChange={props.gender}  className="form-control" placeholder="Gender" />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <div className="col">
+                  <input type="text" value ={props.DOB} onChange={props.DOB}  className="form-control" placeholder="Date of Birth" />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <div className="col">
+                  <input type="text" value ={props.social} onChange={props.social}  className="form-control" placeholder="Social Media" />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <div className="col">
                   <button onClick={props.onClick}> Submit </button>
                 </div>
               </div>
