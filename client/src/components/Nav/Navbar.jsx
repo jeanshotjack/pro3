@@ -16,12 +16,11 @@ function NavBar(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse>
-
+{/* 
           <NavDropdown className="dropDown secondary"
             eventKey={3}
             title="Menu"
           >
-
             <Button href="/" className="dropdown-item btn-primary login">Home</Button>
 
             <Button href="/login" className="dropdown-item btn-primary login">Login</Button>
@@ -32,7 +31,7 @@ function NavBar(props) {
 
             <Button href="/logout" className="dropdown-item btn-primary logout">Logout</Button>
 
-          </NavDropdown>
+          </NavDropdown> */}
 
         </Navbar.Collapse>
       </Navbar>

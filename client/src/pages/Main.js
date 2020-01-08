@@ -3,22 +3,21 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
 import PostForm from "../components/PostForm";
+import Login from "./Login"
 
 import API from "../utils/API";
-
 import {Redirect} from 'react-router-dom'
-
 // import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
   state = {
-    username: "",
+    username: "(username)",
     pronouns: "",
     social: "",
     mock_posts: [],
     flag: false,
     error: "",
-    redirect: null
+    redirectTo: null
   };
 
   componentDidMount() {
@@ -29,26 +28,11 @@ class Main extends Component {
 
   getUser = () => {
     API.getUser()
-
-      .then(res => {console.log("get user").
-        then(response => {
-        console.log("login response");
-        console.log(response);
+      .then(res => {console.log("get user")
       
-    this.setState({ User: res.data })
+        this.setState({ User: res.data })
     console.log(res)})
-
       .catch(err => console.log(err));
-
-      if (res.status === 200) { 
-        this.props.updateUser({
-          loggedIn: true,
-          username: res.data.username
-        });
-        this.setState({
-          redirectTo: "/home"
-        });
-      }
   };
 
   getPosts = () => {
@@ -67,24 +51,27 @@ class Main extends Component {
       )
       .catch(err => console.log(err));
   };
-
-//   renderLogin = () => {
-//     if(data.user){
-// console.log("logged in")
-//     }
-//   };
-
+// isLoggedIn = () => {
+//   if (res.status === 200) { 
+//     this.setState({
+//       redirect: false,
+//     });
+// }
+// }
 
   render() {
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />;
+    } else {
     return (
+      <div>
       <Container fluid>
         <Row>
-
           <Col size="md-2">
-            <PostForm
-              username={this.state.username}
-              pronouns={this.state.pronouns}
-              social={this.state.social}
+            <PostForm 
+            username={this.state.username}
+            pronouns={this.state.pronouns}
+            social={this.state.social}
             />
           </Col>
           <Col size="md-10">
@@ -99,14 +86,16 @@ class Main extends Component {
                 index={index}
                 handleFlagPost={this.handleFlagPost}
               />
+
             })}
           </Col>
         </Row>
       </Container>
-
+</div>
     );
 
   }
+}
 }
 
 export default Main;

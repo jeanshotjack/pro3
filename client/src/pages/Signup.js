@@ -10,7 +10,8 @@ class SignUp extends Component {
             confirm: "",
             email: "",
             DOP: "",
-            gender: ""
+            gender: "",
+            renderLogin: null
         }
     }
 
@@ -82,9 +83,21 @@ class SignUp extends Component {
                     DOB: this.state.DOB
                 })
                     .then(res => console.log("Signed Up: " + JSON.stringify(res)))
-                    .catch(err => console.log(err))
+                    .catch(err => console.log(err));
+
             }
+
+            // if (res.status === 200) { 
+            //     this.props.updateUser({
+            //       loggedIn: true,
+            //       username: res.data.username
+            //     });
+            //     this.setState({
+            //       redirectTo: "/login"
+            //     });
+            //   }
         }
+
     }
     render() {
         return (
