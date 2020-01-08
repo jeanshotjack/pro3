@@ -5,14 +5,22 @@ body {
 
   }
 
-  .card {
+  .signUpCard {
     background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
     padding: 5rem;
-    margin: 3rem;
+    margin: 10rem;
+    border-radius: 1rem;
+    font-family: Optima, Sans-serif;
+    box-shadow: 5px 5px 40px blue;    
+  }
+
+  .loginCard {
+    background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
+    padding: 5rem;
+    margin: 15rem;
     border-radius: 1rem;
     font-family: Optima, Sans-serif;
     box-shadow: 5px 5px 40px blue;
-    
   }
 
   .sideFont {
@@ -25,14 +33,12 @@ body {
   }
 
   .dropDown {
-    margin: 80%;
+    margin: 70%;
     height: 70px;
   }
   
-
   .noxLogo {
     margin: 25rem;
-    height: 30%;
     width: 30%;
   }
 
@@ -67,10 +73,12 @@ body {
     font-size: 15px;
     
   }
+
   .login {
     font-size: 15px;
     
   }
+
   .signup {
     font-size: 15px;
     
@@ -80,12 +88,12 @@ body {
     
   }
   .sidenav {
-    height: 90%;
+    height: 90.4%;
     width: 250px;
     position: fixed;
-    top: 60px;
-    left: .1%;
-    padding-top: 20px;
+    top: 59px;
+    left: .2%;
+    padding-top: 5px;
     background: rgb(255, 255, 255);
     border-style: solid;
     text-align: center;
