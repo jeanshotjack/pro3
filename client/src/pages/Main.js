@@ -9,7 +9,7 @@ import API from "../utils/API";
 
 class Main extends Component {
   state = {
-    username: "(username)",
+    username: "",
     pronouns: "",
     social: "",
     mock_posts: [],
@@ -25,9 +25,11 @@ class Main extends Component {
 
   getUser = () => {
     API.getUser()
-      .then(res => {console.log("get user")
+      .then(res => {
+        console.log("get user")
         this.setState({ User: res.data })
-    console.log(res)})
+        console.log(res.data.user.username)
+      })
       .catch(err => console.log(err));
   };
 
@@ -48,18 +50,18 @@ class Main extends Component {
       .catch(err => console.log(err));
   };
 
-  
+
 
   render() {
     return (
       <Container fluid>
         <Row>
-          
+
           <Col size="md-2">
-            <PostForm 
-            username={this.state.username}
-            pronouns={this.state.pronouns}
-            social={this.state.social}
+            <PostForm
+              username={this.state.username}
+              pronouns={this.state.pronouns}
+              social={this.state.social}
             />
           </Col>
           <Col size="md-10">
