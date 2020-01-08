@@ -9,22 +9,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // create: function (req, res) {
-  //   const userInfo = req.body
-  //   console.log(userInfo)
-  //   db.Post
-  //     .findOne({ username: userInfo.username }, (err, existingUser) => {
-  //       if (err) {
-  //         console.log("Error in post: " + err)
-  //       }
-  //       else if (existingUser) {
-  //         console.log("username exists")
-  //       } else {
-  //         db.Post
-  //           .create(req.body)
-  //           .then(dbModel => res.json(dbModel))
-  //           .catch(err => res.status(422).json(err));
-  //       }
-  //     })
-  // },
+
+  create: function (req, res) {
+    const postInfo = req.body
+    console.log(postInfo)
+    db.Post
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
 }
