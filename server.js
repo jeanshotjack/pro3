@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes)
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/posts");
-// Serve up static assets (usually on heroku)
+// Serve up static assets (usually on heroku) 
 
 // Define API routes here
 // Send every other request to the React app
