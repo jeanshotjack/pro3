@@ -65,7 +65,7 @@ class Main extends Component {
             />
           </Col>
           <Col size="md-10">
-            {this.state.mock_posts.map((obj, index) => {
+            {this.state.mock_posts.reverse().map((obj, index) => {
               return <AllPosts
                 title={obj.title}
                 User={obj.User}
