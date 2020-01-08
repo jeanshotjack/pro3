@@ -24,7 +24,7 @@ class PostForm extends React.Component {
         event.preventDefault();
         this.setState({ postBody: event.target.value })
     }
-    handleSubmit = (event) => {
+    handleSubmit(event) {
         event.preventDefault();
 
         console.log("Submitted!")
@@ -39,11 +39,12 @@ class PostForm extends React.Component {
                 <Row className="flex-wrap-reverse">
                     <Col size="md-8">
 
-                        <div class="container-fluid sidenav">
+
+                        <div className="container-fluid sidenav">
 
                             <img className="profoimg" src={require("../PostForm/profileSidebar.png")} />
                             <hr />
-                            {/* can we please change this font */}
+         {/* can we please change this font */}
                             <p className="sideFont">
                                 Hello! {this.props.username}
                             </p>
@@ -66,7 +67,7 @@ class PostForm extends React.Component {
                                 <input id="body" onChange={this.handleBodyInput} name="body" type="text" />
 
 
-                                <button onClick={() => this.handleSubmit()}>Submit</button>
+                                <button type="submit" onClick={this.handleSubmit}>Submit</button>
 
                             </div>
 
