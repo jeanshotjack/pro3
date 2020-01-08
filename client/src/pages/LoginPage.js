@@ -16,7 +16,7 @@ function Login(props) {
                   <input type="text" onChange = {props.handleUserInput} className="form-control" placeholder="User Name" />
                 </div>
                 <div class="col">
-                  <input type="password" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
+                  <input type="text" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
                 </div>
               </div>
 

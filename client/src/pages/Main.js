@@ -28,7 +28,7 @@ class Main extends Component {
       .then(res => {
         console.log("get user")
         this.setState({ User: res.data })
-        console.log(res.data.user.username)
+        console.log(res.data.User.username)
       })
       .catch(err => console.log(err));
   };
@@ -73,7 +73,7 @@ class Main extends Component {
             />
           </Col>
           <Col size="md-10">
-            {this.state.mock_posts.map((obj, index) => {
+            {this.state.mock_posts.reverse().map((obj, index) => {
               return <AllPosts
                 title={obj.title}
                 User={obj.User}
