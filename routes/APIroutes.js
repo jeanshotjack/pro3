@@ -10,13 +10,13 @@ router.route("/api/users/")
 
 router.route("/api/login")
   .post(apiController.loginUser)
-// .get(apiController.findAll)
-// .post(apiController.loginUser)
+  // .get(apiController.findAll)
+  // .post(apiController.loginUser)
 
 
 router.route("/api/posts")
   .get(postsControler.findAll)
-  // .post(postsControler.create)
+  .post(postsControler.create)
 
 
 module.exports = router;
