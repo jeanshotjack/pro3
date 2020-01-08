@@ -63,7 +63,7 @@ module.exports = {
       res.json({user: req.session.user})
     }
     else{
-      console.log("no session found")
+      res.json({user: null})
     }
   },
   logout: function(req,res){
@@ -71,32 +71,9 @@ module.exports = {
     console.log("logged out")
     res.end()
   }
-
-      // if (req.session.views) {
-      //   req.session.views++
-      //   res.setHeader('Content-Type', 'text/html')
-      //   res.write('<p>views: ' + req.session.views + '</p>')
-      //   res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
-      //   res.end()
-      // } else {
-      //   req.session.views = 1
-      //   res.end('welcome to the session demo. refresh!')
-      // }
   }
 
 
-
-
-// app.post("/api/signin", function(req, res) {
-//     console.log("Posting");
-//     var userInfo = req.body;
-//     if (!userInfo.username || !userInfo.password) {
-//       console.log("Fill in all fields")
-//     } else {
-//       db.User
-//         .findAll( { username: userInfo.username } )
-//         .then(function(username) {
-//           if (username.length > 0) {
 //             var hash = crypto
 //               .pbkdf2Sync(
 //                 userInfo.password,
@@ -110,9 +87,13 @@ module.exports = {
 //               sessionstorage.setItem("user", username[0]);
 //               var user = sessionstorage.getItem("user");
 //               console.log(user);
-//             } else {
+//             } 
+
+
+
+//else {
 //             }
 //           } else {
 //             console.log("Log in Failed");
 //           }
-//        
+//   
