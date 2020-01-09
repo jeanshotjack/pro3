@@ -8,7 +8,7 @@ In addition, any user could mark a post once, and if a post is marked more than 
 
 It is worth mentioning that the real-time chat function can be implemented. On the chat page, users can chat publicly or chat with a user individually.
  
-> Deployed Link: [Click Here](https:/)
+> Deployed Link: [Click Here](https://nox2.herokuapp.com/)
 
 ## How to Use
 
