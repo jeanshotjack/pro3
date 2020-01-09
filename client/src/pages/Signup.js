@@ -9,8 +9,9 @@ class SignUp extends Component {
             password: "",
             confirm: "",
             email: "",
-            DOP: "",
-            gender: ""
+            DOB: "",
+            pronouns: "",
+            social: ""
         }
     }
 
@@ -39,7 +40,7 @@ class SignUp extends Component {
         console.log(event.target.value)
         this.setState({ DOB: event.target.value })
     }
-    handleGender = (event) => {
+    handlePronouns = (event) => {
         event.preventDefault();
         console.log(event.target.value)
         this.setState({ gender: event.target.value })
@@ -78,7 +79,8 @@ class SignUp extends Component {
                     username: this.state.username,
                     password: this.state.password,
                     email: this.state.email,
-                    gender: this.state.gender,
+                    pronouns: this.state.pronouns,
+                    social: this.state.social,
                     DOB: this.state.DOB
                 })
                     .then(res => console.log("Signed Up: " + JSON.stringify(res)))
@@ -95,7 +97,7 @@ class SignUp extends Component {
                 handleConfirm={this.handleConfirm}
                 handleEmail={this.handleEmail}
                 handleDOB={this.handleDOB}
-                handleGender={this.handleGender}
+                handlePronouns={this.handlePronouns}
                 handleSocial = {this.handleSocial}
                 onClick={this.handleVer} />
             </div>
