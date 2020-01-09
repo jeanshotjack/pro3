@@ -30,6 +30,8 @@ function NavBar(props) {
 
               <Button href="/" className="dropdown-item btn-primary login">Home</Button>
 
+              <Button href="/chat" className="dropdown-item btn-primary login">Chat</Button>
+
               <Button href="/login" className="dropdown-item btn-primary login">Login</Button>
 
               <Button href="/signup" className="dropdown-item btn-primary signup">Sign Up</Button>
