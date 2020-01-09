@@ -19,7 +19,7 @@ function NavBar(props) {
           {/* <NavDropdown className="dropDown secondary"
             eventKey={3}
             title="Menu" */}
-          >
+          
 
           <Dropdown className="dropMenu ml-auto">
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
