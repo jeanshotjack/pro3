@@ -15,10 +15,6 @@ function NavBar(props) {
         </Navbar.Brand>
 
         <Navbar.Collapse id="basic-navbar-nav">
-
-          {/* <NavDropdown className="dropDown secondary"
-            eventKey={3}
-            title="Menu" */}
           
 
           <Dropdown className="dropMenu ml-auto">
