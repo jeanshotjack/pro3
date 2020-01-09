@@ -17,12 +17,12 @@ It is worth mentioning that the real-time chat function can be implemented. On t
 
 #### Demo accounts:
 > (User Name 1)
-> Username: test@test
-> Password: test
+> Username: breadtober
+> Password: testest
 
 > (User Name 2)
-> Username: 
-> Password: 
+> Username: emopickle
+> Password: testest
 
 > (User Name 3)
 > Username: 
