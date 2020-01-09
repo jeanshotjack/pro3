@@ -17,16 +17,12 @@ It is worth mentioning that the real-time chat function can be implemented. On t
 
 #### Demo accounts:
 > (User Name 1)
-> Username: test
-> Password: test
+> Username: breadtober
+> Password: testest
 
 > (User Name 2)
-> Username: 
-> Password: 
-
-> (User Name 3)
-> Username: 
-> Password: 
+> Username: emopickle
+> Password: testest
 
 ### Login
 <!-- Users can sign up and login with their Username and Password. -->
