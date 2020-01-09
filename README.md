@@ -17,7 +17,7 @@ It is worth mentioning that the real-time chat function can be implemented. On t
 
 #### Demo accounts:
 > (User Name 1)
-> Username: test@test
+> Username: test
 > Password: test
 
 > (User Name 2)
@@ -54,5 +54,5 @@ It is worth mentioning that the real-time chat function can be implemented. On t
 
 - Jack Shalenkova - https://jeanshotjack.github.io
 - Sean Melvin - https://Sean8595.github.io
-- Mustafa Muhammad - 
+- Mustafa Muhammad - https://krismoosevisual.github.io/Bootstrap-Portfolio/
 - Bailing Zhang - https://easonchang15530.github.io/Bootstrap-Portfolio
