@@ -74,13 +74,13 @@ class Main extends Component {
       <div>
       <Container fluid>
 
-        <div>
+        {/* <div>
           <div className="container-fluid">
             <div className="row justify-content-center">
               <img className="noxLogo" src={require("../../src/components/NoxLogo/Nox2.png")} />
             </div>
           </div>
-        </div>
+        </div> */}
         <Row>
           <Col size="md-2">
             <PostForm 
