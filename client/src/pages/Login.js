@@ -2,11 +2,8 @@ import React, { Component, useState } from "react";
 import LoginPage from "./LoginPage";
 import API from "../utils/API";
 import {Redirect, Route} from 'react-router-dom'
-import Main from "./Main"
-import Sidebar from "../components/PostForm"
 
 class Login extends Component {
-    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props)
         this.state = {

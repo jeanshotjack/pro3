@@ -13,7 +13,7 @@ class SignUp extends Component {
             email: "",
             DOP: "",
             gender: "",
-            errorMessage: "",
+            errorMessage: "Hello World",
             redirectTo: null
         }
     }
@@ -56,9 +56,9 @@ class SignUp extends Component {
         event.preventDefault();
         if (!this.state.username ||
             !this.state.password ||
-            !this.state.confirm ||
-            !this.state.email ||
-            !this.state.gender
+            !this.state.confirm 
+            // !this.state.email ||
+            // !this.state.gender
             // !this.state.DOB
             ) {
             this.setState({errorMessage: "Please fill in all fields"})
@@ -71,7 +71,7 @@ class SignUp extends Component {
             }
             else {
                 console.log("encrypting...");
-                API.saveUser({
+                API.create({
                     username: this.state.username,
                     password: this.state.password,
                     email: this.state.email,
