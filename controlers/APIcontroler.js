@@ -38,11 +38,9 @@ module.exports = {
           console.log("error in get" + err)
         }
         else if (existingUser) {
-
           console.log("this is existing user", existingUser)
           console.log(req.session)
           if(userInfo.password === existingUser.password){
-  
             req.session.user = existingUser
             console.log("user exists so log in")
             res.send(existingUser)
