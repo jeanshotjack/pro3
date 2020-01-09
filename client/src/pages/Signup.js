@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import {Redirect, Route} from 'react-router-dom'
 import SignUpPage from "../components/SignUp/SignUpPage";
 import API from "../utils/API";
+
 class SignUp extends Component {
     constructor(props) {
         super(props)
@@ -11,10 +13,11 @@ class SignUp extends Component {
             email: "",
             DOB: "",
             pronouns: "",
-            social: ""
+            social: "",
+            errorMessage: "",
+            redirectTo: null
         }
     }
-
     handleUser = (event) => {
         event.preventDefault();
         console.log(event.target.value)
@@ -43,7 +46,7 @@ class SignUp extends Component {
     handlePronouns = (event) => {
         event.preventDefault();
         console.log(event.target.value)
-        this.setState({ gender: event.target.value })
+        this.setState({ pronouns: event.target.value })
     }
     handleSocial = (event) => {
         event.preventDefault();
@@ -52,27 +55,21 @@ class SignUp extends Component {
     }
     handleVer = (event) => {
         event.preventDefault();
-        console.log("Click")
         if (!this.state.username ||
             !this.state.password ||
-            !this.state.confirm
-            // !this.state.email ||
-            // !this.state.gender||
-            // !this.state.DOB
+            !this.state.confirm ||
+            !this.state.email ||
+            !this.state.pronouns ||
+            !this.state.DOB
             ) {
-            console.log("Please Fill in all things")
+            this.setState({errorMessage: "Please fill in all fields"})
+            console.log(this.state.errorMessage)
         }
         else {
             if (this.state.confirm !== this.state.password) {
                 console.log("Passwords do not match")
+                this.setState({errorMessage: "Passwords do not match"})
             }
-            // else if (!this.state.username || 
-            //     !this.state.password ||
-            //      !this.state.confirm || 
-            //      !this.state.email || 
-            //      this.state.gender){
-            //     console.log("Please fill in all fields")
-            // }
             else {
                 console.log("encrypting...");
                 API.saveUser({
@@ -85,14 +82,21 @@ class SignUp extends Component {
                 })
                     .then(res => console.log("Signed Up: " + JSON.stringify(res)))
                     .catch(err => console.log(err))
-            }
+                    .then(this.setState({redirectTo:"/login"}));    
+           }
         }
+
     }
     render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />;
+          }
         return (
             <div>
+                {console.log(this.errorMessage)}
                 <SignUpPage 
-                handleUser={this.handleUser} 
+                handleUser={this.handleUser}
+                errorMessage={this.errorMessage}
                 handlePassword={this.handlePassword} 
                 handleConfirm={this.handleConfirm}
                 handleEmail={this.handleEmail}

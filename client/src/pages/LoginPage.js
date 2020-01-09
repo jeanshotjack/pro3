@@ -19,7 +19,7 @@ function Login(props) {
                   <input type="text" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
                 </div>
               </div>
-
+              <div align="center">{props.errorMessage}</div>
               <div className="form-group">
                 <div className="col" align="center">
                   <button onClick = {props.OnClick}> Submit </button>
