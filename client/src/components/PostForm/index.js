@@ -17,26 +17,31 @@ class PostForm extends React.Component {
         this.state = {
             postTitle: "",
             postBody: "",
-            user: ""
+            user: "",
+            pronouns: "",
+            social: ""
         }
     }
 
 
-  getUser = () => {
-    API.getUser()
-      .then(res => {
-        console.log("get user")
-        this.setState({  
-        user: res.data.user.username })
-        console.log(res)
-      })
-      .catch(err => console.log(err));
-  };
+    getUser = () => {
+        API.getUser()
+            .then(res => {
+                console.log("get user")
+                this.setState({
+                    user: res.data.user.username,
+                    pronouns: res.data.user.pronouns,
+                    social: res.data.user.social
+                })
+                console.log(res)
+            })
+            .catch(err => console.log(err));
+    };
 
-  componentDidMount = () => {
-      this.getUser();
-  }
-    
+    componentDidMount = () => {
+        this.getUser();
+    }
+
     handleTitleInput = (event) => {
         event.preventDefault();
         this.setState({ postTitle: event.target.value })
@@ -58,7 +63,7 @@ class PostForm extends React.Component {
         // axios.post("/api/posts", dbPost)
         //     .catch(err => console.log(err))
 
-        API.savePost( {
+        API.savePost({
             title: this.state.postTitle,
             body: this.state.postBody,
             user: this.state.user
@@ -88,11 +93,11 @@ class PostForm extends React.Component {
                             <p className="sideFont">
                                 User Name: {this.props.username}
                             </p>
-                            
+
                             <p className="sideFont">
                                 Pronouns: {this.props.pronouns}
                             </p>
-                            
+
                             <p className="sideFont">
                                 Social Media: {this.props.social}
                             </p>

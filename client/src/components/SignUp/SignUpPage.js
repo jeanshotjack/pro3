@@ -41,7 +41,7 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
-                  <input type="text" value ={props.gender} onChange={props.gender}  className="form-control" placeholder="Gender" />
+                  <input type="text" value ={props.pronouns} onChange={props.pronouns}  className="form-control" placeholder="Pronouns" />
                 </div>
               </div>
 
