@@ -2,16 +2,15 @@ import React from "react";
 
 const Signup = (props) => {
   return (
-
-
-    <div className="container">
+    <div className="container-fluid">
+      {console.log(props.errorMessage)}
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="card">
-            <div className="card-header" align="center">Sign Up</div>
-            <div className="card-body"></div>
-
-            <form onSubmit>
+          <div className="signUpCard">
+            <div className="header" align="center"><h3>Sign Up</h3></div>
+            <div className="box"></div>
+            <div className="header" align="center"><h5>{props.errorMessage}</h5></div>
+            <form>
               <div className="form-row">
 
                 <div className="form-group">
@@ -48,7 +47,7 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
-                  <input type="text" value ={props.DOB} onChange={props.DOB}  className="form-control" placeholder="Date of Birth" />
+                  <input type="date" value ={props.DOB} onChange={props.DOB}  className="form-control" placeholder="Date of Birth" />
                 </div>
               </div>
 

@@ -4,7 +4,7 @@ import { Row, Col } from "../Grid";
 import SubmitPost from "../SubmitPost";
 import axios from "axios";
 // import SideBar from "../SideBar";
-
+import API from "../../utils/API";
 
 import "./style.css";
 // import console = require("console");
@@ -17,8 +17,25 @@ class PostForm extends React.Component {
         this.state = {
             postTitle: "",
             postBody: "",
+            user: ""
         }
     }
+
+
+  getUser = () => {
+    API.getUser()
+      .then(res => {
+        console.log("get user")
+        this.setState({  
+        user: res.data.user.username })
+        console.log(res)
+      })
+      .catch(err => console.log(err));
+  };
+
+  componentDidMount = () => {
+      this.getUser();
+  }
     
     handleTitleInput = (event) => {
         event.preventDefault();
@@ -35,14 +52,17 @@ class PostForm extends React.Component {
         event.preventDefault();
 
         console.log("Submitted!")
+        console.log(this.props)
         console.log(this.state.postBody, this.state.postTitle)
         // const dbPost = new Post(event.target);
         // axios.post("/api/posts", dbPost)
         //     .catch(err => console.log(err))
 
-        axios.post("/api/posts", {
+        API.savePost( {
             title: this.state.postTitle,
-            body: this.state.postBody
+            body: this.state.postBody,
+            user: this.state.user
+
         }).then(response => {
             console.log(response)
         })
@@ -66,11 +86,13 @@ class PostForm extends React.Component {
                             </p>
 
                             <p className="sideFont">
-                                Pronouns: {this.props.pronouns}
-                            </p>
-                            <p className="sideFont">
                                 User Name: {this.props.username}
                             </p>
+                            
+                            <p className="sideFont">
+                                Pronouns: {this.props.pronouns}
+                            </p>
+                            
                             <p className="sideFont">
                                 Social Media: {this.props.social}
                             </p>

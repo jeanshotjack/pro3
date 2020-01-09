@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
 import PostForm from "../components/PostForm";
 import Login from "./Login"
 
 import API from "../utils/API";
-import {Redirect} from 'react-router-dom'
 // import mock_posts from "../mock_posts.json";
 
 class Main extends Component {
@@ -28,16 +27,29 @@ class Main extends Component {
 
   getUser = () => {
     API.getUser()
-      .then(res => {console.log("get user")
-      
-        this.setState({ User: res.data })
-    console.log(res)})
-      .catch(err => console.log(err));
+      .then(res => {
+        if(!res.data.user) {
+          this.setState({ 
+            redirectTo:"/login"
+          })
+        } else {
+          console.log("get user")
+          this.setState({ User: res.data, 
+          username: res.data.user.username,
+          pronouns: res.data.user.pronouns,
+          social: res.data.user.social })
+          console.log(res)
+        }
+        })      
+        .catch(err => console.log(err));
+
+
   };
 
   getPosts = () => {
     API.getPosts()
-      .then(res => this.setState({ mock_posts: res.data }))
+      .then(res => 
+        this.setState({ mock_posts: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -51,13 +63,8 @@ class Main extends Component {
       )
       .catch(err => console.log(err));
   };
-// isLoggedIn = () => {
-//   if (res.status === 200) { 
-//     this.setState({
-//       redirect: false,
-//     });
-// }
-// }
+
+
 
   render() {
     if (this.state.redirectTo) {
@@ -66,6 +73,14 @@ class Main extends Component {
     return (
       <div>
       <Container fluid>
+
+        <div>
+          <div className="container-fluid">
+            <div className="row justify-content-center">
+              <img className="noxLogo" src={require("../../src/components/NoxLogo/Nox2.png")} />
+            </div>
+          </div>
+        </div>
         <Row>
           <Col size="md-2">
             <PostForm 
@@ -75,10 +90,11 @@ class Main extends Component {
             />
           </Col>
           <Col size="md-10">
-            {this.state.mock_posts.map((obj, index) => {
+            {this.state.mock_posts.reverse().map((obj, index) => {
               return <AllPosts
+            
                 title={obj.title}
-                User={obj.User}
+                user={obj.user}
                 postCreated={obj.postCreated}
                 body={obj.body}
 

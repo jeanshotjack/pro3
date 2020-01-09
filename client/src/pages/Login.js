@@ -12,8 +12,8 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
-            isAuthenticated: false,
-            redirectTo:null
+            errorMessage: "",
+            redirectTo: null
         }
     }
 handleUserInput = (event) => {
@@ -50,6 +50,7 @@ render() {
             handleUserInput={this.handleUserInput} 
             handlePasswordInput={this.handlePasswordInput}
             OnClick ={this.handleLogin} 
+            errorMessage = {this.errorMessage}
             />
              <Route exact path="/login">
             {console.log(this.state.redirect)}
