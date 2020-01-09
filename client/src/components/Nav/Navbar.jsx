@@ -17,11 +17,18 @@ function NavBar(props) {
 
         <Navbar.Collapse>
 
+<<<<<<< HEAD
           <NavDropdown className="dropDown secondary"
+=======
+          {/* <NavDropdown className="dropDown secondary"
+>>>>>>> 21a6c60cb86ab3e5b60db45f2170f8d92e97754f
             eventKey={3}
-            title="Menu"
+            title="Menu" */}
           >
+<<<<<<< HEAD
             <Button href="/" className="dropdown-item btn-primary login">Home</Button>
+=======
+>>>>>>> 21a6c60cb86ab3e5b60db45f2170f8d92e97754f
 
             <Button href="/login" className="dropdown-item btn-primary login">Login</Button>s
 
@@ -33,8 +40,12 @@ function NavBar(props) {
 
           </NavDropdown>
 
+<<<<<<< HEAD
         </Navbar.Collapse>
       </Navbar>
+=======
+          {/* </NavDropdown> */}
+>>>>>>> 21a6c60cb86ab3e5b60db45f2170f8d92e97754f
 
       <div>
         <div className="container-fluid">
