@@ -24,10 +24,6 @@ It is worth mentioning that the real-time chat function can be implemented. On t
 > Username: emopickle
 > Password: testest
 
-> (User Name 3)
-> Username: 
-> Password: 
-
 ### Login
 <!-- Users can sign up and login with their Username and Password. -->
 <!-- ![](appScreenshot/signup.jpg) -->
@@ -54,5 +50,5 @@ It is worth mentioning that the real-time chat function can be implemented. On t
 
 - Jack Shalenkova - https://jeanshotjack.github.io
 - Sean Melvin - https://Sean8595.github.io
-- Mustafa Muhammad - 
+- Mustafa Muhammad - https://krismoosevisual.github.io/Bootstrap-Portfolio/
 - Bailing Zhang - https://easonchang15530.github.io/Bootstrap-Portfolio
