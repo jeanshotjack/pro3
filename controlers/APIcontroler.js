@@ -1,7 +1,6 @@
 const db = require("../Models");
 // const session = require('express-session')
 const crypto = require('crypto');
-
 // Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {
@@ -19,7 +18,8 @@ module.exports = {
           console.log("Error in post: " + err)
         }
         else if (existingUser) {
-          console.log("username exists")
+          console.log("username already exists")
+          res.send(userExists)
         } else {
           db.User
             .create(req.body)
