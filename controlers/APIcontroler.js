@@ -19,12 +19,26 @@ module.exports = {
         }
         else if (existingUser) {
           console.log("username already exists")
-          res.send(userExists)
         } else {
+          var salt = crypto
+              .randomBytes(64).toString("hex");
+          var hash = crypto
+              .pbkdf2Sync(userInfo.password, salt, 10000, 64, "sha512")
+              .toString("hex");
+          console.log(hash)
           db.User
-            .create(req.body)
+            .create(req.body
+              // username: userInfo.username, 
+              // password: hash,
+              // email: userInfo.email,
+              // pronouns: userInfo.pronouns,
+              // social: userInfo.social,
+              // DOB: userInfo.DOB,
+              // salt: salt
+            )
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
+            console.log("enter")
         }
       })
   },
