@@ -14,7 +14,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+      <Nav />
+      </div>
         <Switch>
           <Route exact path="/" component={Main}/>
           <Route exact path="/login" component={Login} />
@@ -26,7 +27,6 @@ function App() {
           <Route path = "*" component={NoMatch} /> 
           {/* correct if I'm wrong but should it not be * for the one above? */}
         </Switch>
-      </div>
     </Router>
   );
 }
