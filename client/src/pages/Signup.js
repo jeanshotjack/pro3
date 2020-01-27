@@ -78,7 +78,7 @@ class SignUp extends Component {
                     email: this.state.email,
                     pronouns: this.state.pronouns,
                     social: this.state.social,
-                    DOB: this.state.DOB
+                    DOB: this.state.DOB,
                 })
                     .then(res => console.log("Signed Up: " + JSON.stringify(res)))
                     .catch(err => console.log(err))

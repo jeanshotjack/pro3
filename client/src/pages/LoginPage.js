@@ -10,7 +10,6 @@ function Login(props) {
             <div className="header" align="center"><h3>Login</h3></div>
             <div className="box"></div>
             <form>
-
               <div class="form-row">
                 <div class="col">
                   <input type="text" onChange = {props.handleUserInput} className="form-control" placeholder="User Name" />
@@ -25,7 +24,6 @@ function Login(props) {
                   <button onClick = {props.OnClick}> Submit </button>
                 </div>
               </div>
-
             </form>
           </div>
         </div>
