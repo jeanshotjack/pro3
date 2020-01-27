@@ -53,6 +53,7 @@ module.exports = {
         else if (existingUser) {
           console.log("this is existing user", existingUser)
           console.log(req.session)
+          console.log(existingUser.salt)
           var hash = crypto
           .pbkdf2Sync(
             userInfo.password,
