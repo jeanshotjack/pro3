@@ -15,6 +15,7 @@ class Main extends Component {
     social: "",
     mock_posts: [],
     flag: false,
+    liked: false,
     error: "",
     redirectTo: null
   };
@@ -54,7 +55,7 @@ class Main extends Component {
   };
 
   handleFlagPost = event => {
-    event.preventDefault();
+
     const id = event.target.id;
     console.log(id)
     API.getPosts()
@@ -63,6 +64,7 @@ class Main extends Component {
       )
       .catch(err => console.log(err));
   };
+
 
 
 
@@ -90,6 +92,7 @@ class Main extends Component {
                 user={obj.user}
                 postCreated={obj.postCreated}
                 body={obj.body}
+                liked={obj.liked}
 
                 idInDatabase={obj._id}
                 index={index}

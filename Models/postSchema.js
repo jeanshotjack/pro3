@@ -24,6 +24,10 @@ const PostSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  liked: {
+    type: Boolean,
+    default: false,
+  },
   postCreated: {
     type: Date,
     default: Date.now
