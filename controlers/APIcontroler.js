@@ -1,7 +1,6 @@
 const db = require("../Models");
 // const session = require('express-session')
 const crypto = require('crypto');
-
 // Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {
@@ -19,10 +18,24 @@ module.exports = {
           console.log("Error in post: " + err)
         }
         else if (existingUser) {
-          console.log("username exists")
+          console.log("username already exists")
         } else {
-          db.User
-            .create(req.body)
+          var salt = crypto
+              .randomBytes(64).toString("hex");
+          var hash = crypto
+              .pbkdf2Sync(userInfo.password, salt, 10000, 64, "sha512")
+              .toString("hex");
+          console.log(hash)
+          db.User.
+            create({
+              username: userInfo.username, 
+              password: hash,
+              email: userInfo.email,
+              pronouns: userInfo.pronouns,
+              social: userInfo.social,
+              DOB: userInfo.DOB,
+              salt: salt
+            })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
         }
@@ -40,7 +53,18 @@ module.exports = {
         else if (existingUser) {
           console.log("this is existing user", existingUser)
           console.log(req.session)
-          if(userInfo.password === existingUser.password){
+          console.log(existingUser.salt)
+          var hash = crypto
+          .pbkdf2Sync(
+            userInfo.password,
+            existingUser.salt,
+            10000,
+            64,
+            "sha512"
+          )
+          .toString("hex");
+
+          if(hash === existingUser.password){
             req.session.user = existingUser
             console.log("user exists so log in")
             res.send(existingUser)
@@ -70,28 +94,3 @@ module.exports = {
     res.end()
   }
   }
-
-
-//             var hash = crypto
-//               .pbkdf2Sync(
-//                 userInfo.password,
-//                 username[0].salt,
-//                 10000,
-//                 64,
-//                 "sha512"
-//               )
-//               .toString("hex");
-//             if (hash === username[0].password) {
-//               sessionstorage.setItem("user", username[0]);
-//               var user = sessionstorage.getItem("user");
-//               console.log(user);
-//             } 
-
-
-
-//else {
-//             }
-//           } else {
-//             console.log("Log in Failed");
-//           }
-//   

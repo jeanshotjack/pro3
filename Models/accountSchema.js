@@ -34,7 +34,10 @@ const UserSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Post"
     }
-  ]
+  ],
+  salt:{
+    type: String
+  }
 });
 
 // UserSchema.hasMany("Post");
