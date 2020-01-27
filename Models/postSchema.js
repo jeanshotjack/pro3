@@ -20,6 +20,10 @@ const PostSchema = new Schema({
     //   "Body can't be longer than 200 characters"
     // ]
   },
+  flag: {
+    type: Boolean,
+    default: false,
+  },
   postCreated: {
     type: Date,
     default: Date.now

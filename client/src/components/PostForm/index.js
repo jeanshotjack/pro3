@@ -43,18 +43,17 @@ class PostForm extends React.Component {
     }
 
     handleTitleInput = (event) => {
-        event.preventDefault();
+       
         this.setState({ postTitle: event.target.value })
         console.log(this.state.postTitle)
     }
     handleBodyInput = (event) => {
-        event.preventDefault();
+        
         this.setState({ postBody: event.target.value })
         console.log(this.state.postBody)
 
     }
     handleSubmit(event) {
-        event.preventDefault();
 
         console.log("Submitted!")
         console.log(this.props)
@@ -87,12 +86,12 @@ class PostForm extends React.Component {
                             <hr />
                             {/* can we please change this font */}
                             <p className="sideFont">
-                                Hello! {this.props.username}
+                                @ {this.props.username}
                             </p>
 
-                            <p className="sideFont">
+                            {/* <p className="sideFont">
                                 User Name: {this.props.username}
-                            </p>
+                            </p> */}
 
                             <p className="sideFont">
                                 Pronouns: {this.props.pronouns}

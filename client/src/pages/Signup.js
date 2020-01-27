@@ -57,10 +57,10 @@ class SignUp extends Component {
         event.preventDefault();
         if (!this.state.username ||
             !this.state.password ||
-            !this.state.confirm 
-            // !this.state.email ||
-            // !this.state.gender
-            // !this.state.DOB
+            !this.state.confirm ||
+            !this.state.email ||
+            !this.state.pronouns ||
+            !this.state.DOB
             ) {
             this.setState({errorMessage: "Please fill in all fields"})
             console.log(this.state.errorMessage)
