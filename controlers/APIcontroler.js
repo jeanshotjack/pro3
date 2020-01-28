@@ -19,6 +19,8 @@ module.exports = {
         }
         else if (existingUser) {
           console.log("username already exists")
+          let errorObject = {error: true, errorMsg: "Failed to store new User in database :("};
+          return res.status(400).json(errorObject)
         } else {
           var salt = crypto
               .randomBytes(64).toString("hex");
@@ -62,7 +64,7 @@ module.exports = {
             64,
             "sha512"
           )
-          .toString("hex");
+          .toString("hex")
 
           if(hash === existingUser.password){
             req.session.user = existingUser
