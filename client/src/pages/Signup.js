@@ -81,8 +81,13 @@ class SignUp extends Component {
                     DOB: this.state.DOB,
                 })
                     .then(res => console.log("Signed Up: " + JSON.stringify(res)))
-                    .catch(err => console.log(err))
-                    .then(this.setState({redirectTo:"/login"}));    
+                    .catch(err => {
+                        if(err.response.data.error){
+                            console.log(err.response.data.errorMsg)
+                            this.setState({errorMessage: err.response.data.errorMsg})
+                        }
+                    })
+                    // .then(this.setState({redirectTo:"/login"}));
            }
         }
 
@@ -93,10 +98,10 @@ class SignUp extends Component {
           }
         return (
             <div>
-                {console.log(this.errorMessage)}
+                {console.log(this.state.errorMessage)}
                 <SignUpPage 
                 handleUser={this.handleUser}
-                errorMessage={this.errorMessage}
+                errorMessage={this.state.errorMessage}
                 handlePassword={this.handlePassword} 
                 handleConfirm={this.handleConfirm}
                 handleEmail={this.handleEmail}
