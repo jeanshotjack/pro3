@@ -120,6 +120,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow-y: scroll;
   }
 
   .chat-header {
@@ -145,6 +146,7 @@ html {
     justify-content: flex-end;
     margin-bottom: 0;
     min-height: min-content;
+    overflow-y: scroll;
   }
 
   .message {
