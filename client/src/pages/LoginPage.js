@@ -10,11 +10,11 @@ function Login(props) {
             <div className="header" align="center"><h3>Login</h3></div>
             <div className="box"></div>
             <form>
-              <div class="form-row">
-                <div class="col">
+              <div className="form-row">
+                <div className="col">
                   <input type="text" onChange = {props.handleUserInput} className="form-control" placeholder="User Name" />
                 </div>
-                <div class="col">
+                <div className="col">
                   <input type="text" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
                 </div>
               </div>

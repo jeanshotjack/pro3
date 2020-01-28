@@ -2,6 +2,8 @@ import React from "react";
 import ListItem from "../List/index";
 import { Row, Col } from "../Grid";
 
+import Like from "../Like"
+
 import "./style.css";
 
 function AllPosts(props) {
@@ -18,6 +20,7 @@ function AllPosts(props) {
           <div className="btn-container">
             <button className="btn btn-secondary" data-index={props.user} onClick={props.handUserPrompt}> @{props.user} </button>
             <button className="btn btn-secondary" data-index={props.index} onClick={props.handleFlagPost}> Flag </button>
+            <Like />
             <p className="small">
             Published: {props.postCreated}
           </p>

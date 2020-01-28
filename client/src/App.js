@@ -13,8 +13,9 @@ import Rules from "./components/Rules";
 function App() {
   return (
     <Router>
-      <div>
+     
         <Nav />
+        <div>
         <Switch>
           <Route exact path="/" component={Main}/>
           <Route exact path="/login" component={Login} />
