@@ -1,14 +1,17 @@
 body {
     background: linear-gradient(70deg, #df7af3, #f7f7f7);
     color: #514B64;
-    min-height: 100vh;
-
+    min-height: 100%;
+    background-position: center;
+    padding-top: 100px;
+    padding: 150px;
+    padding-right: 20px;
   }
 
   .signUpCard {
     background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
     padding: 5rem;
-    margin: 10rem;
+    margin: 0rem;
     border-radius: 1rem;
     font-family: Optima, Sans-serif;
     box-shadow: 5px 5px 40px blue;    
@@ -17,10 +20,11 @@ body {
   .loginCard {
     background: linear-gradient(70deg, rgb(255, 255, 255), rgb(137, 255, 255));
     padding: 5rem;
-    margin: 15rem;
+    margin: 0rem;
     border-radius: 1rem;
     font-family: Optima, Sans-serif;
     box-shadow: 5px 5px 40px blue;
+
   }
 
   .sideFont {
@@ -100,6 +104,7 @@ body {
   .sidenav {
     height: 90.4%;
     width: 250px;
+    margin: 0rem;
     position: fixed;
     top: 59px;
     left: .2%;
@@ -109,7 +114,6 @@ body {
     text-align: center;
   }
   
-
   
   
   
