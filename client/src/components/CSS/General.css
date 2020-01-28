@@ -2,6 +2,7 @@ body {
     background: linear-gradient(70deg, #df7af3, #f7f7f7);
     color: #514B64;
     min-height: 100vh;
+    padding-top: 70px;
     padding: 10%;
   }
 

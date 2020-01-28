@@ -42,19 +42,19 @@ const Signup = (props) => {
 
               <div className="form-group">
                 <div className="col">
-                  <input type="text" value ={props.pronouns} onChange={props.pronouns}  className="form-control" placeholder="Pronouns" />
+                  <input type="text" value ={props.pronouns} onChange={props.handlePronouns}  className="form-control" placeholder="Pronouns" />
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="col">
-                  <input type="date" value ={props.DOB} onChange={props.DOB}  className="form-control" placeholder="Date of Birth" />
+                  <input type="date" value ={props.DOB} onChange={props.handleDOB}  className="form-control" placeholder="Date of Birth" />
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="col">
-                  <input type="text" value ={props.social} onChange={props.social}  className="form-control" placeholder="Social Media" />
+                  <input type="text" value ={props.social} onChange={props.handleSocial}  className="form-control" placeholder="Social Media" />
                 </div>
               </div>
 

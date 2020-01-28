@@ -16,23 +16,26 @@ function AllPosts(props) {
         </Col>
         <Col size="md-4">
           <div className="btn-container">
-            <button className="btn btn-secondary" data-index={props.user} onClick={props.handUserPrompt}> About this user </button>
+            <button className="btn btn-secondary" data-index={props.user} onClick={props.handUserPrompt}> @{props.user} </button>
             <button className="btn btn-secondary" data-index={props.index} onClick={props.handleFlagPost}> Flag </button>
+            <p className="small">
+            Published: {props.postCreated}
+          </p>
           </div>
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col size="md-6">
-          <p className="font-italic small">
-            User: {props.user}
+          <p className="small">
+            @ {props.user}
           </p>
         </Col>
         <Col size="md-6">
-          <p className="font-italic small">
+          <p className="small">
             Published: {props.postCreated}
           </p>
         </Col>
-      </Row>
+      </Row> */}
       <Row>
         <Col size="12 md-12">
           <p>{props.body}</p>
