@@ -15,13 +15,13 @@ function Login(props) {
                   <input type="text" onChange = {props.handleUserInput} className="form-control" placeholder="User Name" />
                 </div>
                 <div className="col">
-                  <input type="text" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
+                  <input type="password" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
                 </div>
               </div>
               <div align="center">{props.errorMessage}</div>
               <div className="form-group">
                 <div className="col" align="center">
-                  <button onClick = {props.OnClick}> Submit </button>
+                  <button onClick = {props.OnClick}> Login </button>
                 </div>
               </div>
             </form>
