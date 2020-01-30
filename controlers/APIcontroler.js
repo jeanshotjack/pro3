@@ -98,8 +98,15 @@ module.exports = {
             req.session.user = existingUser
             console.log("user exists so log in")
             res.send(existingUser)
-
           }
+          else{
+            let errorObject = { error: true, errorMsg: "Password is invalid"};
+                return res.status(400).json(errorObject)
+          }
+        }
+        else{
+          let errorObject = { error: true, errorMsg: "Username is invalid" };
+                return res.status(400).json(errorObject)
         }
       })
   },
