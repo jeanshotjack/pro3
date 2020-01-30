@@ -1,9 +1,5 @@
 import React from "react";
 import { Row, Col } from "../Grid";
-<<<<<<< HEAD
-
-=======
->>>>>>> f8508493f52fe39cfbe2e6e73476335af3729e21
 import axios from "axios";
 // import SideBar from "../SideBar";
 import API from "../../utils/API";

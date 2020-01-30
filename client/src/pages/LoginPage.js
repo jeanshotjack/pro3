@@ -1,10 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
 import NoxRules from "../components/NoxLogo/NoxRules";
 
-=======
 import Form from 'react-bootstrap/Form';
->>>>>>> f8508493f52fe39cfbe2e6e73476335af3729e21
 
 function Login(props) {
   return (
