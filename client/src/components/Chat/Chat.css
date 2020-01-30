@@ -1,11 +1,11 @@
 @media (min-width: 0px){
 html {
     box-sizing: border-box;
-    padding-bottom: -5rem;
-    padding-top: -5rem;
-    margin-left: -10rem;
-    margin-right: -6rem;
-    margin-top: -7.5rem;
+    /* padding-bottom: -5rem; */
+    /* padding-top: -5rem; */
+    /* margin-left: -10rem; */
+    /* margin-right: -8.5rem; */
+    margin-top: -2.5rem;
   }
 
   *, *::before, *::after {
@@ -33,12 +33,15 @@ html {
   .right-sidebar {
     border-left: 1px solid #ccc;
     float: right;
-
+    padding-right: 0%;
+    margin-right: -5rem;
   }
 
   .left-sidebar {
     border-right: 1px solid #ccc;
     float: left;
+    padding-left: -20rem;
+    margin-left: -9rem;
   }
 
   .user-profile {
@@ -69,7 +72,7 @@ html {
     color: #181919;
     cursor: pointer;
     border-bottom: 1px solid #eee;
-    margin-bottom: 0;
+    margin-bottom: 10;
   }
 
   .room-member {
@@ -130,7 +133,7 @@ html {
   }
 
   .chat-header {
-    height: 70px;
+    height: 40px;
     flex-shrink: 0;
     border-bottom: 1px solid #ccc;
     padding-left: 10px;

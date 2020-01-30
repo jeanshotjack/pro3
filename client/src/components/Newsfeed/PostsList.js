@@ -16,7 +16,7 @@ export class PostsListItem extends React.Component {
       ; return (
         <div>
           <li>
-            <Container  className="postList">
+            <Container >
               <Row>
 
                 <Col size="xs-8 sm-9">

@@ -44,7 +44,7 @@ render() {
 
               <Button onClick={() => this.handleLogout()} href = "/login" className="dropdown-item btn-primary logout">Logout</Button>
 
-              <Button href="/rules" className="dropdown-item btn-primary logout">Rules</Button>
+              <Button href="/rules" className="dropdown-item btn-primary logout">About Nox</Button>
 
             </Dropdown.Menu>
           </Dropdown>
