@@ -34,6 +34,12 @@ const PostSchema = new Schema({
   },
   user: {
     type: String
+  },
+  pronouns: {
+    type: String
+  },
+  social: {
+    type: String
   }
 //   user: [
 //     {
