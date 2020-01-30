@@ -1,7 +1,9 @@
 import React from "react";
-import ListItem from "../List";
 import { Row, Col } from "../Grid";
+<<<<<<< HEAD
 
+=======
+>>>>>>> f8508493f52fe39cfbe2e6e73476335af3729e21
 import axios from "axios";
 // import SideBar from "../SideBar";
 import API from "../../utils/API";
@@ -62,6 +64,7 @@ class PostForm extends React.Component {
         console.log(this.state.postBody)
 
     }
+    
     handleSubmit(event) {
 
         console.log("Submitted!")
@@ -86,7 +89,7 @@ class PostForm extends React.Component {
 
     render() {
         return (
-            <ListItem>
+            
                 <Row className="flex-wrap-reverse">
                     <Col size="md-8">
 
@@ -129,7 +132,7 @@ class PostForm extends React.Component {
 
                     </Col>
                 </Row>
-            </ListItem>
+         
             // <SideBar handleTitle = {this.handleTitleInput} handleBody = {this.handleBodyInput} handleSubmit={this.handleSubmit}/>
         );
     }
