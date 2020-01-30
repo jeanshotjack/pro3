@@ -37,30 +37,34 @@ class PostForm extends React.Component {
     };
     getPosts = () => {
         API.getPosts()
-          .then(res => 
-            this.setState({ postTitle: res.data.title,
-            user: res.data.user,
-        postBody: res.data.body }))
-          .catch(err => console.log(err));
-      };
-    
+            .then(res =>
+                this.setState({
+                    title: res.data.title,
+                    user: res.data.user,
+                    body: res.data.body,
+                    pronouns: res.data.user.pronouns,
+                    social: res.data.user.social
+                }))
+            .catch(err => console.log(err));
+    };
+
 
     componentDidMount = () => {
         this.getUser();
     }
 
     handleTitleInput = (event) => {
-       
+
         this.setState({ postTitle: event.target.value })
         console.log(this.state.postTitle)
     }
     handleBodyInput = (event) => {
-        
+
         this.setState({ postBody: event.target.value })
         console.log(this.state.postBody)
 
     }
-    
+
     handleSubmit(event) {
 
         console.log("Submitted!")
@@ -70,10 +74,14 @@ class PostForm extends React.Component {
         // axios.post("/api/posts", dbPost)
         //     .catch(err => console.log(err))
 
+        this.getUser();
+
         API.savePost({
             title: this.state.postTitle,
             body: this.state.postBody,
-            user: this.state.user
+            user: this.state.user,
+            pronouns: this.state.pronouns,
+            social: this.state.social
 
         }).then(response => {
             console.log(response);
@@ -85,50 +93,50 @@ class PostForm extends React.Component {
 
     render() {
         return (
-            
-                <Row className="flex-wrap-reverse">
-                    <Col size="md-8">
+
+            <Row className="flex-wrap-reverse">
+                <Col size="md-8">
 
 
-                        <div className="container-fluid sidenav">
+                    <div className="container-fluid sidenav">
 
-                            <img className="profoimg" src={require("../PostForm/profileSidebar.png")} />
-                            <hr />
-                            {/* can we please change this font */}
-                            <p className="sideFont">
-                                @ {this.props.username}
-                            </p>
+                        <img className="profoimg" src={require("../PostForm/profileSidebar.png")} />
+                        <hr />
+                        {/* can we please change this font */}
+                        <p className="sideFont">
+                            @ {this.props.username}
+                        </p>
 
-                            {/* <p className="sideFont">
+                        {/* <p className="sideFont">
                                 User Name: {this.props.username}
                             </p> */}
 
-                            <p className="sideFont">
-                                Pronouns: {this.props.pronouns}
-                            </p>
+                        <p className="sideFont">
+                            Pronouns: {this.props.pronouns}
+                        </p>
 
-                            <p className="sideFont">
-                                Social Media: {this.props.social}
-                            </p>
+                        <p className="sideFont">
+                            Social Media: {this.props.social}
+                        </p>
 
-                            <div className="form-group">
-                                <label htmlFor="title">Post Title</label>
-                                <input id="title" onChange={this.handleTitleInput} value={this.state.postTitle} name="title" type="text" />
+                        <div className="form-group">
+                            <label htmlFor="title">Post Title</label>
+                            <input id="title" onChange={this.handleTitleInput} value={this.state.postTitle} name="title" type="text" />
 
-                                <label htmlFor="body">Post Body</label>
-                                <input id="body" value={this.state.postBody} onChange={this.handleBodyInput} name="body" type="text" />
+                            <label htmlFor="body">Post Body</label>
+                            <input id="body" value={this.state.postBody} onChange={this.handleBodyInput} name="body" type="text" />
 
 
-                                <button type="submit" onClick={this.handleSubmit}>Submit</button>
-
-                            </div>
-
+                            <button type="submit" onClick={this.handleSubmit}>Submit</button>
 
                         </div>
 
-                    </Col>
-                </Row>
-         
+
+                    </div>
+
+                </Col>
+            </Row>
+
             // <SideBar handleTitle = {this.handleTitleInput} handleBody = {this.handleBodyInput} handleSubmit={this.handleSubmit}/>
         );
     }

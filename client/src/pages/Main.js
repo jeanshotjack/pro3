@@ -68,7 +68,11 @@ class Main extends Component {
   };
 
 
+handleUserPrompt = event => {
 
+  const id = event.target.id;
+  console.log(id)
+}
 
   render() {
     if (this.state.redirectTo) {
