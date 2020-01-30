@@ -20,9 +20,6 @@ function Login(props) {
         <div className="col-md-8">
           <div className="loginCard">
             <div className="header" align="center"><h3>Login</h3></div>
-              <Form.Control.Feedback type="invalid">
-              Please provide a valid city.
-              </Form.Control.Feedback>
             <div className="box"></div>
             <form>
               <div className="form-row">
@@ -33,7 +30,8 @@ function Login(props) {
                   <input type="password" onChange = {props.handlePasswordInput} className="form-control" placeholder="password" />
                 </div>
               </div>
-              <div align="center">{props.errorMessage}</div>
+              {console.log(props.errorMessage)}
+              <div className="error" style={{color: "red"}} align="center"><h5>{props.errorMessage}</h5></div>
               <div className="form-group">
                 <div className="col" align="center">
                   <button onClick = {props.OnClick}> Login </button>
