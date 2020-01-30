@@ -7,14 +7,11 @@ const Signup = (props) => {
 
         <div className="container-fluid">
             <div className="row justify-content-center">
-                <div className="col-md-8">
+                <div className="col-md-12">
 
-                    <a><img className="noxRulesLogo center" src={require("../components/NoxLogo/Nox2.png")} /></a>
+                    <a><img className="noxRulesLogo center" src={require("../components/NoxLogo/Nox_Rules.jpg")} /></a>
                     <hr />
-                    <h6>
-                        <p>Nox is a dating, social and community app designed for queer and trans folks. There are many dating app options for cis gay men and cis straight couples. Please respect this space and the persons frequenting it. No transphobia, racism, hate speech, ableism, or fatphobia. If your content is found offensive enough to be reported by members of our community, it will be automatically deleted.
-            </p>
-                    </h6>
+                    
                 </div>
             </div>
         </div >

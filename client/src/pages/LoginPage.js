@@ -7,17 +7,7 @@ function Login(props) {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-4" align="left">
-        <NoxRules 
-        height="100vh"
-        dpr="auto"
-        responsive
-        width="auto"
-        crop="scale"
-        responsiveUseBreakpoints="true"
-        />
-        </div>
-        <div className="col-md-8">
+        <div className="col-md-10">
           <div className="loginCard">
             <div className="header" align="center"><h3>Login</h3></div>
             <div className="box"></div>
