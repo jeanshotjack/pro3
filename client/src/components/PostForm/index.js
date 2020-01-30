@@ -35,6 +35,15 @@ class PostForm extends React.Component {
             })
             .catch(err => console.log(err));
     };
+    getPosts = () => {
+        API.getPosts()
+          .then(res => 
+            this.setState({ postTitle: res.data.title,
+            user: res.data.user,
+        postBody: res.data.body }))
+          .catch(err => console.log(err));
+      };
+    
 
     componentDidMount = () => {
         this.getUser();
@@ -67,7 +76,9 @@ class PostForm extends React.Component {
             user: this.state.user
 
         }).then(response => {
-            console.log(response)
+            console.log(response);
+            this.getPosts();
+            window.location.reload();
         })
             .catch(err => console.log(err))
     }

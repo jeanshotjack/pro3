@@ -24,6 +24,8 @@ class Main extends Component {
     this.getPosts();
   }
 
+
+
   getUser = () => {
     API.getUser()
       .then(res => {
@@ -50,6 +52,7 @@ class Main extends Component {
     API.getPosts()
       .then(res => 
         this.setState({ mock_posts: res.data }))
+
       .catch(err => console.log(err));
   };
 
