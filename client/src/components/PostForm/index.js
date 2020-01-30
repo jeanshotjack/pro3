@@ -75,7 +75,7 @@ class PostForm extends React.Component {
 
     render() {
         return (
-            <ListItem>
+            
                 <Row className="flex-wrap-reverse">
                     <Col size="md-8">
 
@@ -118,7 +118,7 @@ class PostForm extends React.Component {
 
                     </Col>
                 </Row>
-            </ListItem>
+         
             // <SideBar handleTitle = {this.handleTitleInput} handleBody = {this.handleBodyInput} handleSubmit={this.handleSubmit}/>
         );
     }
