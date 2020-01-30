@@ -1,15 +1,18 @@
 import React from "react";
-
+import NoxLogo from "..//NoxLogo/NoxLogo";
 
 const Signup = (props) => {
   return (
     <div className="container-fluid">
-      <div className="row justify-content-center">
+      <div className="row">
+      <div className="col-md-4">
+        <NoxLogo />
+        </div>
         <div className="col-md-8">
           <div className="signUpCard">
             <div className="header" align="center"><h3>Sign Up</h3></div>
             <div className="box"></div>
-            <div className="header" align="center"><h5>{props.errorMessage}</h5></div>
+            <div className="error" style={{color: "red"}} align="center"><h5>{props.errorMessage}</h5></div>
             <form>
               <div className="form-row">
 
@@ -65,6 +68,9 @@ const Signup = (props) => {
 
 
             </form>
+            <div>
+              <p>Already have an account? Click here to <a href="/login" value="/login">login</a></p>
+            </div>
           </div>
         </div>
       </div>

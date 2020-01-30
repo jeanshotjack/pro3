@@ -3,8 +3,6 @@ import { Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import AllPosts from "../components/AllPosts";
 import PostForm from "../components/PostForm";
-import Login from "./Login"
-
 import API from "../utils/API";
 // import mock_posts from "../mock_posts.json";
 
@@ -25,6 +23,8 @@ class Main extends Component {
     this.getUser();
     this.getPosts();
   }
+
+
 
   getUser = () => {
     API.getUser()
@@ -48,9 +48,11 @@ class Main extends Component {
   };
 
   getPosts = () => {
+    console.log("got posts?")
     API.getPosts()
       .then(res => 
         this.setState({ mock_posts: res.data }))
+
       .catch(err => console.log(err));
   };
 

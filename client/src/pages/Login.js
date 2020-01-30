@@ -34,7 +34,12 @@ handleLogin = (event) => {
                     redirectTo:"/"
                 })
             }
-    )
+    ).catch(err => {
+        if(err.response.data.error){
+            console.log(err.response.data.errorMsg)
+            this.setState({errorMessage: err.response.data.errorMsg})
+        }
+    })
 
 }
 render() {
@@ -43,11 +48,12 @@ render() {
       } else {
     return (
         <div>
+            {console.log(this.state.errorMessage)}
             <LoginPage
             handleUserInput={this.handleUserInput} 
             handlePasswordInput={this.handlePasswordInput}
             OnClick ={this.handleLogin} 
-            errorMessage = {this.errorMessage}
+            errorMessage = {this.state.errorMessage}
             />
              <Route exact path="/login">
             {console.log(this.state.redirect)}

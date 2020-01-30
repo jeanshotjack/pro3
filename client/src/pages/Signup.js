@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {Redirect, Route} from 'react-router-dom'
 import SignUpPage from "../components/SignUp/SignUpPage";
 import API from "../utils/API";
-
+var success = false
 class SignUp extends Component {
     constructor(props) {
         super(props)
@@ -65,31 +65,26 @@ class SignUp extends Component {
             this.setState({errorMessage: "Please fill in all fields"})
             console.log(this.state.errorMessage)
         }
-        else {
-            if (this.state.confirm !== this.state.password) {
-                console.log("Passwords do not match")
-                this.setState({errorMessage: "Passwords do not match"})
-            }
             else {
                 console.log("encrypting...");
                 API.create({
                     username: this.state.username,
+                    confirm: this.state.confirm,
                     password: this.state.password,
                     email: this.state.email,
                     pronouns: this.state.pronouns,
                     social: this.state.social,
                     DOB: this.state.DOB,
                 })
-                    .then(res => console.log("Signed Up: " + JSON.stringify(res)))
+                    .then(res => this.setState({redirectTo:"/login"}))
                     .catch(err => {
                         if(err.response.data.error){
                             console.log(err.response.data.errorMsg)
                             this.setState({errorMessage: err.response.data.errorMsg})
                         }
                     })
-                    // .then(this.setState({redirectTo:"/login"}));
            }
-        }
+        
 
     }
     render() {
