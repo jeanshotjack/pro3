@@ -3,7 +3,6 @@ import {Redirect, Route} from 'react-router-dom'
 import SignUpPage from "../components/SignUp/SignUpPage";
 import API from "../utils/API";
 var success = false
-console.log(success)
 class SignUp extends Component {
     constructor(props) {
         super(props)
@@ -77,18 +76,16 @@ class SignUp extends Component {
                     social: this.state.social,
                     DOB: this.state.DOB,
                 })
-                    .then(this.setState({redirectTo: "/login"})
-                    )
+                    .then(res => this.setState({redirectTo:"/login"}))
                     .catch(err => {
                         if(err.response.data.error){
                             console.log(err.response.data.errorMsg)
-                            this.setState({errorMessage: err.response.data.errorMsg, redirectTo: "/signup", success: false})
+                            this.setState({errorMessage: err.response.data.errorMsg})
                         }
-                        else{
-                        }
-                        }
-                    )
+                    })
            }
+        
+
     }
     render() {
         if (this.state.redirectTo) {

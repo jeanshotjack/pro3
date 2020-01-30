@@ -33,7 +33,7 @@ module.exports = {
 
       else {
         if (!regex.test(userInfo.password)) {
-          let errorObject = { error: true, errorMsg: "Minimum eight characters, at least one letter and one number"};
+          let errorObject = { error: true, errorMsg: "Password must be a minimum of eight characters, at least one letter, and one number"};
           return res.status(400).json(errorObject)
         }
         else {

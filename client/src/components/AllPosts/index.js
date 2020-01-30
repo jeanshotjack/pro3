@@ -7,7 +7,6 @@ import Like from "../Like"
 import "./style.css";
 
 function AllPosts(props) {
-
   return (
     <ListItem>
       <Row className="flex-wrap-reverse">

@@ -1,5 +1,5 @@
 import React from "react";
-
+import Form from 'react-bootstrap/Form';
 
 function Login(props) {
   return (
@@ -8,6 +8,9 @@ function Login(props) {
         <div className="col-md-8">
           <div className="loginCard">
             <div className="header" align="center"><h3>Login</h3></div>
+              <Form.Control.Feedback type="invalid">
+              Please provide a valid city.
+              </Form.Control.Feedback>
             <div className="box"></div>
             <form>
               <div className="form-row">
