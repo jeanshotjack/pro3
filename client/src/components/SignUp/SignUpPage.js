@@ -9,7 +9,7 @@ const Signup = (props) => {
           <div className="signUpCard">
             <div className="header" align="center"><h3>Sign Up</h3></div>
             <div className="box"></div>
-            <div className="header" align="center"><h5>{props.errorMessage}</h5></div>
+            <div className="error" style={{color: "red"}} align="center"><h5>{props.errorMessage}</h5></div>
             <form>
               <div className="form-row">
 

@@ -18,7 +18,7 @@ class SubmitPost extends React.Component{
     render() {
         return (
           <div>
-          <button className="primary" onClick={() => 
+          <button type = "submit" className="primary" onClick={() => 
             {this.postToDB(this.props)}
             }>
             Submit
