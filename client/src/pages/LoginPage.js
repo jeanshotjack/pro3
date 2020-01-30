@@ -1,10 +1,21 @@
 import React from "react";
+import NoxRules from "../components/NoxLogo/NoxRules";
 
 
 function Login(props) {
   return (
     <div className="container-fluid">
-      <div className="row justify-content-center">
+      <div className="row">
+        <div className="col-md-4" align="left">
+        <NoxRules 
+        height="100vh"
+        dpr="auto"
+        responsive
+        width="auto"
+        crop="scale"
+        responsiveUseBreakpoints="true"
+        />
+        </div>
         <div className="col-md-8">
           <div className="loginCard">
             <div className="header" align="center"><h3>Login</h3></div>
@@ -25,10 +36,14 @@ function Login(props) {
                 </div>
               </div>
             </form>
+            <div>
+              <p>Don't have an account? Click here to <a href="/signup" value="/signup">sign up</a></p>
+            </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+
   );
 }
 
