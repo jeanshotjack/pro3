@@ -1,5 +1,11 @@
+@media (min-width: 0px){
 html {
     box-sizing: border-box;
+    padding-bottom: -5rem;
+    padding-top: -5rem;
+    margin-left: -10rem;
+    margin-right: -6rem;
+    margin-top: -7.5rem;
   }
 
   *, *::before, *::after {
@@ -68,7 +74,7 @@ html {
 
   .room-member {
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 20px;
     height: 60px;
   }
 
@@ -237,3 +243,4 @@ html {
     color: #5C8436;
     background-color: #222;
   }
+}
